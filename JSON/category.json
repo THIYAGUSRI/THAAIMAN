@@ -1,0 +1,108 @@
+[{
+  "_id": {
+    "$oid": "68ad9d8ae265912a830ee221"
+  },
+  "id": "C001",
+  "categoryName": "Sweets",
+  "image": "",
+  "active": true
+},
+{
+  "_id": {
+    "$oid": "68ad9d8ae265912a830ee222"
+  },
+  "id": "C002",
+  "categoryName": "Spices",
+  "image": "",
+  "active": true
+},
+{
+  "_id": {
+    "$oid": "68ad9d8ae265912a830ee223"
+  },
+  "id": "C003",
+  "categoryName": "Grains",
+  "image": "",
+  "active": true
+},
+{
+  "_id": {
+    "$oid": "68ad9d8ae265912a830ee224"
+  },
+  "id": "C004",
+  "categoryName": "Pulse",
+  "image": "",
+  "active": true
+},
+{
+  "_id": {
+    "$oid": "68ad9d8ae265912a830ee225"
+  },
+  "id": "C005",
+  "categoryName": "Oil Seeds",
+  "image": "",
+  "active": true
+},
+{
+  "_id": {
+    "$oid": "68ad9d8ae265912a830ee226"
+  },
+  "id": "C006",
+  "categoryName": "Snacks",
+  "image": "",
+  "active": true
+},
+{
+  "_id": {
+    "$oid": "68ad9d8ae265912a830ee227"
+  },
+  "id": "C007",
+  "categoryName": "Vegetables",
+  "image": "",
+  "active": true
+},
+{
+  "_id": {
+    "$oid": "68ad9d8ae265912a830ee228"
+  },
+  "id": "C008",
+  "categoryName": "Fruits",
+  "image": "",
+  "active": true
+},
+{
+  "_id": {
+    "$oid": "68ad9d8ae265912a830ee229"
+  },
+  "id": "C009",
+  "categoryName": "Dairy",
+  "image": "",
+  "active": true
+},
+{
+  "_id": {
+    "$oid": "68ad9d8ae265912a830ee22a"
+  },
+  "id": "C0010",
+  "categoryName": "Meat",
+  "image": "Uploads\\meat.png",
+  "active": true
+},
+{
+  "_id": {
+    "$oid": "68ad9d8ae265912a830ee22b"
+  },
+  "id": "C0011",
+  "categoryName": "Fish",
+  "image": "",
+  "active": true
+},
+{
+  "_id": {
+    "$oid": "68ad9d8ae265912a830ee22c"
+  },
+  "id": "C0012",
+  "categoryName": "Bakery",
+  "image": "",
+  "active": true
+}]

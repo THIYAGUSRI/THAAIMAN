@@ -1,0 +1,168 @@
+[{
+  "_id": {
+    "$oid": "68a81dd91f81b1c5ffcc713d"
+  },
+  "id": "V001",
+  "title": "Building a React App in 10 Minutes",
+  "description": "In this comprehensive tutorial, we'll walk through building a complete React application from scratch in just 10 minutes. Perfect for beginners, this video covers component creation, state management with hooks, and basic styling.",
+  "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+  "thumbnail": "https://i.ytimg.com/vi/dQw4w9WgXcQ/hqdefault.jpg",
+  "preview": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+  "createdAt": {
+    "$date": "2025-08-22T07:35:53.059Z"
+  },
+  "updatedAt": {
+    "$date": "2025-08-22T07:35:53.059Z"
+  },
+  "__v": 0,
+  "date": "2025-08-10",
+  "userName": "mani",
+  "likes": "0"
+},
+{
+  "_id": {
+    "$oid": "68a81e371f81b1c5ffcc7140"
+  },
+  "id": "V002",
+  "title": "Advanced JavaScript Patterns",
+  "description": "Master advanced JavaScript design patterns with this in-depth guide covering both classical and modern approaches.",
+  "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
+  "thumbnail": "https://i.ytimg.com/vi/PkZNo7MFNFg/hqdefault.jpg",
+  "preview": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
+  "createdAt": {
+    "$date": "2025-08-22T07:37:27.564Z"
+  },
+  "updatedAt": {
+    "$date": "2025-08-22T07:37:27.564Z"
+  },
+  "__v": 0,
+  "date": "2025-07-23",
+  "userName": "bala",
+  "likes": "0"
+},
+{
+  "_id": {
+    "$oid": "68a81e5e1f81b1c5ffcc7143"
+  },
+  "id": "V003",
+  "title": "CSS Grid Complete Guide",
+  "description": "A paragraph is a unit of writing consisting of one or more sentences that discuss a single idea, topic, or point, indicated by starting on a new line and often with an indentation. Paragraphs serve to organize text, presenting a cohesive and logical flow of information for the reader. Each paragraph typically contains a topic sentence, supporting sentences with details or examples, and a concluding sentence that might link to the next paragraph.\n \nKey characteristics of a paragraph:\nUnity:\nAll sentences in a paragraph should relate to and support a single central idea. \nCohesion:\nSentences within a paragraph should be logically connected, often using transition words or phrases. \nIndentation:\nThe first line of a paragraph is usually indented to visually separate it from the preceding paragraph. \nTopic Sentence:\nOften, the first sentence introduces the main idea, acting as a \"headline\" for the paragraph's content. \nSupport:\nSubsequent sentences provide details, evidence, or examples to develop and support the topic sentence. \nConclusion:\nThe final sentence may summarize the paragraph's main point or bridge to the topic of the next paragraph. \nHow to write a basic paragraph:\n1. Develop a single main idea:\nDetermine the central point you want to convey in this section of your text. \n2. Write a topic sentence:\nStart with a clear sentence that states this main idea. \n3. Provide supporting details:\nFollow up with sentences that give more information, examples, or explanations to elaborate on the topic sentence. \n\n\n\n4. Conclude the paragraph:\nFinish with a sentence that offers a summary, a final thought, or a transition to the next topic. \n5. Format correctly:\nBegin the paragraph on a new line, and indent the first line to signal the start of a new thought. ",
+  "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
+  "thumbnail": "https://i.ytimg.com/vi/9zBsdzdE4sM/hqdefault.jpg",
+  "preview": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
+  "createdAt": {
+    "$date": "2025-08-22T07:38:06.989Z"
+  },
+  "updatedAt": {
+    "$date": "2025-08-22T07:38:06.989Z"
+  },
+  "__v": 0,
+  "date": "2025-08-10",
+  "userName": "arun",
+  "likes": "0"
+},
+{
+  "_id": {
+    "$oid": "68a81e9b1f81b1c5ffcc7146"
+  },
+  "id": "V004",
+  "title": "Node.js Crash Course",
+  "description": "Build production-ready Node.js applications with this comprehensive crash course covering all essential backend concepts.",
+  "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
+  "thumbnail": "https://i.ytimg.com/vi/fBNz5xF-Kx4/hqdefault.jpg",
+  "preview": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
+  "createdAt": {
+    "$date": "2025-08-22T07:39:07.204Z"
+  },
+  "updatedAt": {
+    "$date": "2025-08-22T07:39:07.204Z"
+  },
+  "__v": 0,
+  "userName": "sabari",
+  "date": "2025-08-06",
+  "likes": "0"
+},
+{
+  "_id": {
+    "$oid": "68a81eb21f81b1c5ffcc7149"
+  },
+  "id": "V005",
+  "title": "Python for Beginners - Full Course",
+  "description": "This complete Python tutorial takes you from absolute beginner to proficient programmer with hands-on projects and exercises.",
+  "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
+  "thumbnail": "https://i.ytimg.com/vi/rfscVS0vtbw/hqdefault.jpg",
+  "preview": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
+  "createdAt": {
+    "$date": "2025-08-22T07:39:30.733Z"
+  },
+  "updatedAt": {
+    "$date": "2025-08-22T07:39:30.733Z"
+  },
+  "__v": 0,
+  "userName": "sri",
+  "date": "2025-08-04",
+  "likes": "0"
+},
+{
+  "_id": {
+    "$oid": "68a81ee11f81b1c5ffcc714c"
+  },
+  "id": "V006",
+  "title": "Docker & Kubernetes Guide",
+  "description": "Learn containerization and orchestration with Docker and Kubernetes in this complete guide for developers.",
+  "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4",
+  "thumbnail": "https://i.ytimg.com/vi/3c-iBn73dDE/hqdefault.jpg",
+  "preview": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4",
+  "createdAt": {
+    "$date": "2025-08-22T07:40:17.767Z"
+  },
+  "updatedAt": {
+    "$date": "2025-08-22T07:40:17.767Z"
+  },
+  "__v": 0,
+  "date": "2025-80-01",
+  "userName": "varun",
+  "likes": "0"
+},
+{
+  "_id": {
+    "$oid": "68a81ef71f81b1c5ffcc714f"
+  },
+  "id": "V007",
+  "title": "Git & GitHub Complete Course",
+  "description": "Master version control with Git and GitHub through this comprehensive course covering all essential workflows.",
+  "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4",
+  "thumbnail": "https://i.ytimg.com/vi/RGOj5yH7evk/hqdefault.jpg",
+  "preview": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4",
+  "createdAt": {
+    "$date": "2025-08-22T07:40:39.543Z"
+  },
+  "updatedAt": {
+    "$date": "2025-08-22T07:40:39.543Z"
+  },
+  "__v": 0,
+  "userName": "muthu",
+  "date": "2025-03-04",
+  "likes": "0"
+},
+{
+  "_id": {
+    "$oid": "68a81f0d1f81b1c5ffcc7152"
+  },
+  "id": "V008",
+  "title": "Flutter App Development",
+  "description": "Build beautiful cross-platform apps with Flutter in this complete development course.",
+  "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4",
+  "thumbnail": "https://i.ytimg.com/vi/1gDhl4leEzA/hqdefault.jpg",
+  "preview": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4",
+  "createdAt": {
+    "$date": "2025-08-22T07:41:01.403Z"
+  },
+  "updatedAt": {
+    "$date": "2025-08-22T07:41:01.403Z"
+  },
+  "__v": 0,
+  "date": "2025-08-02",
+  "userName": "hari",
+  "likes": "0"
+}]

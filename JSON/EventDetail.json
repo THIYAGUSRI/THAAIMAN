@@ -1,0 +1,57 @@
+[{
+  "_id": {
+    "$oid": "68aecbaf2ff1a55363da1d4c"
+  },
+  "id": "E001",
+  "title": "Pebble Beach Concours d'Elegance",
+  "location": "Pebble Beach, California",
+  "address": "1700 17-Mile Drive, Pebble Beach, CA 93953, USA",
+  "price": 18900,
+  "endDate": "October 22, 2025",
+  "time": "9:00 AM - 5:00 PM",
+  "description": "The world's premier celebration of the automobile featuring 200 of the finest collection.",
+  "images": [
+    "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+    "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2083&q=80",
+    "https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+  ],
+  "startDate": "October 20, 2025"
+},
+{
+  "_id": {
+    "$oid": "68aecbaf2ff1a55363da1d4d"
+  },
+  "id": "E002",
+  "title": "Mille Miglia Classic Rally",
+  "location": "Brescia, Italy",
+  "address": "Viale Venezia, 13, 25121 Brescia BS, Italy",
+  "price": 24500,
+  "endDate": "October 21, 2025",
+  "time": "7:00 AM - 6:00 PM",
+  "description": "Relive the legendary 1000-mile race through Italy's most beautiful landscapes.",
+  "images": [
+    "https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+    "https://images.unsplash.com/photo-1507136566006-cfc505b114fc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1921&q=80",
+    "https://images.unsplash.com/photo-1601362840469-51e4d8d58785?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+  ],
+  "startDate": "October 15, 2025"
+},
+{
+  "_id": {
+    "$oid": "68aecbaf2ff1a55363da1d4e"
+  },
+  "id": "E003",
+  "title": "Goodwood Revival",
+  "location": "Chichester, UK",
+  "address": "Goodwood Motor Circuit, Chichester PO18 0PH, UK",
+  "price": 15800,
+  "endDate": "September 10, 2025",
+  "time": "10:00 AM - 6:00 PM",
+  "description": "Step back in time to motor racing's golden era at the world's most authentic historic race meeting.",
+  "images": [
+    "https://images.unsplash.com/photo-1555215695-3004980ad54e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+    "https://images.unsplash.com/photo-1593941707882-a5bba53b0998?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80",
+    "https://images.unsplash.com/photo-1580273916550-e323be2ae537?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1964&q=80"
+  ],
+  "startDate": "September 8, 2025"
+}]

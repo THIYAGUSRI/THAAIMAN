@@ -1,0 +1,16 @@
+[
+  {
+    "id": "C001",
+    "userID": "U002",
+    "contactType": "Suggestion",
+    "Comment": "x",
+    "createdAt": "2025-08-19T10:04:38.173Z"
+  },
+  {
+    "id": "C002",
+    "userID": "U002",
+    "contactType": "Feedback",
+    "Comment": "s",
+    "createdAt": "2025-08-19T10:05:03.690Z"
+  }
+]

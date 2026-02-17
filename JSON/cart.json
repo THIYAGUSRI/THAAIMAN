@@ -1,0 +1,120 @@
+[
+  {
+    "id": "C001",
+    "user_id": "U001",
+    "Product": [],
+    "subtotal": 0,
+    "GST": 10,
+    "grandtotal": 0,
+    "delivery adresss": "",
+    "items": [
+      {
+        "prod_ID": "P001",
+        "quantity": 2,
+        "selectedRate": {
+          "key": "1KG",
+          "value": 240
+        },
+        "prod_Name": "Chicken",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTK8HzU91QX-k3gwNwVpHZEOpOtIJDd7OLQyw&s",
+        "prod_Rate": [
+          {
+            "1KG": 240
+          },
+          {
+            "0.5": 120
+          },
+          {
+            "0.25": 60
+          }
+        ],
+        "subtotal": 480
+      },
+      {
+        "prod_ID": "P002",
+        "quantity": 2,
+        "selectedRate": {
+          "key": "1KG",
+          "value": 200
+        },
+        "prod_Name": "Ladoo",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8ibH1LSJbUAnhhdvn28H7V7UhwUkGW87acQ&s",
+        "prod_Rate": [
+          {
+            "1KG": 200
+          },
+          {
+            "0.5": 110
+          }
+        ],
+        "subtotal": 400
+      }
+    ],
+    "total": 880,
+    "gst": 158.4,
+    "deliveryCharge": 50,
+    "discount": 50,
+    "grandTotal": 1038.4
+  },
+  {
+    "id": "C002",
+    "user_id": "U002",
+    "items": [
+      {
+        "prod_ID": "P002",
+        "quantity": 1,
+        "selectedRate": {
+          "key": "1KG",
+          "value": 200
+        },
+        "prod_Name": "Ladoo",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8ibH1LSJbUAnhhdvn28H7V7UhwUkGW87acQ&s",
+        "prod_Rate": [
+          {
+            "1KG": 200
+          },
+          {
+            "0.5": 110
+          }
+        ],
+        "subtotal": 200
+      },
+      {
+        "prod_ID": "P008",
+        "quantity": 2,
+        "selectedRate": {
+          "key": "1KG",
+          "value": 30
+        },
+        "prod_Name": "Tomatoes",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScnT5lTMtQ4JOcn3xCKkB5_GrICVhi0tWhbA&s",
+        "prod_Rate": [
+          {
+            "1KG": 30
+          },
+          {
+            "0.5": 18
+          }
+        ],
+        "subtotal": 60
+      }
+    ],
+    "deliveryAddress": "Office, bbb, omalur, tamil nadu 642002",
+    "total": 260,
+    "gst": 46.8,
+    "deliveryCharge": 50,
+    "discount": 50,
+    "grandTotal": 306.8
+  },
+  {
+    "id": "C003",
+    "user_id": "U003",
+    "items": [],
+    "deliveryAddress": "",
+    "total": 0,
+    "gst": 0,
+    "deliveryCharge": 50,
+    "discount": 50,
+    "grandTotal": 0
+  }
+]

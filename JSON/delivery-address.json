@@ -1,0 +1,46 @@
+[
+  {
+    "id": "D001",
+    "userID": "U001",
+    "nickName": "home",
+    "mobile": "9874563210",
+    "address": "aaa",
+    "city": "pollachi",
+    "state": "tamil nadu",
+    "pincode": "642001",
+    "landMark": "near mcet"
+  },
+  {
+    "id": "D002",
+    "userID": "U002",
+    "nickName": "Office",
+    "mobile": "9632587410",
+    "address": "aaabbbccc",
+    "city": "kadayampatti",
+    "state": "tamil nadu",
+    "pincode": "642002",
+    "landMark": "near pollachi bus stand"
+  },
+  {
+    "id": "D003",
+    "userID": "U002",
+    "nickName": "guest House",
+    "mobile": "7410258963",
+    "address": "dddw",
+    "city": "omalur",
+    "state": "tamil nadu",
+    "pincode": "642011",
+    "landMark": "near BIT"
+  },
+  {
+    "id": "D004",
+    "userID": "U003",
+    "nickName": "12home",
+    "mobile": "9876543210",
+    "address": "wer",
+    "city": "wer",
+    "state": "wer",
+    "pincode": "werwer",
+    "landMark": "wer"
+  }
+]

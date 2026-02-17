@@ -1,0 +1,673 @@
+[{
+  "_id": {
+    "$oid": "68a593ed928934b2457e24a0"
+  },
+  "prod_ID": "P001",
+  "prod_Name": "Chicken",
+  "prod_category": "C0010",
+  "prod_Images": [
+    {
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTK8HzU91QX-k3gwNwVpHZEOpOtIJDd7OLQyw&s"
+    },
+    {
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWWnbnV22TtE6jy_iGU68e9gFrcSD3GZtu9w&s"
+    },
+    {
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTK8HzU91QX-k3gwNwVpHZEOpOtIJDd7OLQyw&s"
+    }
+  ],
+  "prod_Rate": [
+    {
+      "1KG": 240
+    },
+    {
+      "0.5g": 120
+    }
+  ],
+  "prod_Stock": 34,
+  "prod_active": true,
+  "prod_Description": "Fresh farm-raised chicken, suitable for curry or fry.",
+  "prod_offer": 10,
+  "sortOrderList": 1
+},
+{
+  "_id": {
+    "$oid": "68a593ed928934b2457e24a1"
+  },
+  "prod_ID": "P002",
+  "prod_Name": "Ladoo",
+  "prod_category": "C001",
+  "prod_Images": [
+    {
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8ibH1LSJbUAnhhdvn28H7V7UhwUkGW87acQ&s"
+    },
+    {
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQi44wvqxgPD5qyhIMgUkWLu2eiBZvwdrPaHQ&s"
+    },
+    {
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSc3zPZ07hixDmT6mr1g-qTCzZChIh174KjOw&s"
+    }
+  ],
+  "prod_Rate": [
+    {
+      "1KG": 200
+    },
+    {
+      "0.5": 110
+    }
+  ],
+  "prod_Stock": 20,
+  "prod_active": true,
+  "prod_Description": "Traditional Indian sweet made of besan and ghee.",
+  "prod_offer": 5,
+  "sortOrderList": 2
+},
+{
+  "_id": {
+    "$oid": "68a593ed928934b2457e24a2"
+  },
+  "prod_ID": "P003",
+  "prod_Name": "Turmeric Powder",
+  "prod_category": "C002",
+  "prod_Images": [
+    {
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSsOf5j7EYCju_f_nPcM3tFsjnlJpUazqwSg&s"
+    },
+    {
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeDN_SpWD8iQzUIcbCs3-j-pyZIX8vjzJAYw&s"
+    },
+    {
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNmxWP1xIfaz5urdpIOEmzYLE8pbMmYM0qwA&s"
+    }
+  ],
+  "prod_Rate": [
+    {
+      "100g": 20
+    },
+    {
+      "200g": 35
+    }
+  ],
+  "prod_Stock": 80,
+  "prod_active": true,
+  "prod_Description": "Pure turmeric powder, rich in color and aroma.",
+  "prod_offer": 3,
+  "sortOrderList": 3
+},
+{
+  "_id": {
+    "$oid": "68a593ed928934b2457e24a3"
+  },
+  "prod_ID": "P004",
+  "prod_Name": "Basmati Rice",
+  "prod_category": "C003",
+  "prod_Images": [
+    {
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbr0EeZYqua5gLGiEFnKulwDpoKYIyysYZ5Q&s"
+    },
+    {
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlCZcAceDUgxII0KB0t2v_1ewWPKisKNLBJA&s"
+    },
+    {
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaoyL_olKAjwK-IR1C4iGDhLZEsHoV9DzWHA&s"
+    }
+  ],
+  "prod_Rate": [
+    {
+      "1KG": 110
+    },
+    {
+      "5KG": 500
+    }
+  ],
+  "prod_Stock": 60,
+  "prod_active": true,
+  "prod_Description": "Long grain, aromatic basmati rice.",
+  "prod_offer": 7,
+  "sortOrderList": 4
+},
+{
+  "_id": {
+    "$oid": "68a593ed928934b2457e24a4"
+  },
+  "prod_ID": "P005",
+  "prod_Name": "Moong Dal",
+  "prod_category": "C004",
+  "prod_Images": [
+    {
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2syAZHMuGhxw0H4ZLnyh7euzhy8TjHrXJjA&s"
+    },
+    {
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTq_oAh5X6saz7ikzKHPENLIz0vSGCgvOHX0g&s"
+    },
+    {
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR87Plq7ZkmbmWUGzDEQu7-qYCy4U1LGPZU_A&s"
+    }
+  ],
+  "prod_Rate": [
+    {
+      "1KG": 120
+    },
+    {
+      "0.5g": 65
+    }
+  ],
+  "prod_Stock": 45,
+  "prod_active": true,
+  "prod_Description": "Split yellow moong dal, easy to cook and digest.",
+  "prod_offer": 6,
+  "sortOrderList": 5
+},
+{
+  "_id": {
+    "$oid": "68a593ed928934b2457e24a5"
+  },
+  "prod_ID": "P006",
+  "prod_Name": "Groundnut Oil",
+  "prod_category": "C005",
+  "prod_Images": [
+    {
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqSDPwyiQ1QzZKQSrTzB-gFEDK5u9ln8sg_g&s"
+    },
+    {
+      "image": "https://c4.wallpaperflare.com/wallpaper/207/1004/941/red-apples-fruit-basket-apple-fruits-wallpaper-preview.jpg"
+    },
+    {
+      "image": "https://c4.wallpaperflare.com/wallpaper/845/646/529/apples-still-life-fruit-food-wallpaper-preview.jpg"
+    }
+  ],
+  "prod_Rate": [
+    {
+      "1L": 180
+    },
+    {
+      "0.5L": 100
+    }
+  ],
+  "prod_Stock": 30,
+  "prod_active": true,
+  "prod_Description": "Cold-pressed groundnut oil for healthy cooking.",
+  "prod_offer": 10,
+  "sortOrderList": 6
+},
+{
+  "_id": {
+    "$oid": "68a593ed928934b2457e24a6"
+  },
+  "prod_ID": "P007",
+  "prod_Name": "Potato Chips",
+  "prod_category": "C006",
+  "prod_Images": [
+    {
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5TDgv4yHGDzhoOQxZnCNkBAFiPyg8aHPHlg&s"
+    },
+    {
+      "image": "https://c4.wallpaperflare.com/wallpaper/207/1004/941/red-apples-fruit-basket-apple-fruits-wallpaper-preview.jpg"
+    },
+    {
+      "image": "https://c4.wallpaperflare.com/wallpaper/845/646/529/apples-still-life-fruit-food-wallpaper-preview.jpg"
+    }
+  ],
+  "prod_Rate": [
+    {
+      "1Pack": 30
+    }
+  ],
+  "prod_Stock": 100,
+  "prod_active": true,
+  "prod_Description": "Crispy and salted classic potato chips.",
+  "prod_offer": 15,
+  "sortOrderList": 7
+},
+{
+  "_id": {
+    "$oid": "68a593ed928934b2457e24a7"
+  },
+  "prod_ID": "P008",
+  "prod_Name": "Tomatoes",
+  "prod_category": "C007",
+  "prod_Images": [
+    {
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScnT5lTMtQ4JOcn3xCKkB5_GrICVhi0tWhbA&s"
+    },
+    {
+      "image": "https://c4.wallpaperflare.com/wallpaper/207/1004/941/red-apples-fruit-basket-apple-fruits-wallpaper-preview.jpg"
+    },
+    {
+      "image": "https://c4.wallpaperflare.com/wallpaper/845/646/529/apples-still-life-fruit-food-wallpaper-preview.jpg"
+    }
+  ],
+  "prod_Rate": [
+    {
+      "1KG": 30
+    },
+    {
+      "0.5": 18
+    }
+  ],
+  "prod_Stock": 85,
+  "prod_active": true,
+  "prod_Description": "Fresh red tomatoes for daily cooking.",
+  "prod_offer": 4,
+  "sortOrderList": 8
+},
+{
+  "_id": {
+    "$oid": "68a593ed928934b2457e24a8"
+  },
+  "prod_ID": "P009",
+  "prod_Name": "Apples",
+  "prod_category": "C008",
+  "prod_Images": [
+    {
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzJDRvAellDvBXPlGlKYG-4xcLBQ2f60v25w&s"
+    },
+    {
+      "image": "https://c4.wallpaperflare.com/wallpaper/207/1004/941/red-apples-fruit-basket-apple-fruits-wallpaper-preview.jpg"
+    },
+    {
+      "image": "https://c4.wallpaperflare.com/wallpaper/845/646/529/apples-still-life-fruit-food-wallpaper-preview.jpg"
+    }
+  ],
+  "prod_Rate": [
+    {
+      "1KG": 150
+    },
+    {
+      "0.5": 80
+    }
+  ],
+  "prod_Stock": 65,
+  "prod_active": true,
+  "prod_Description": "Juicy red apples rich in fiber and antioxidants.",
+  "prod_offer": 5,
+  "sortOrderList": 9
+},
+{
+  "_id": {
+    "$oid": "68a593ed928934b2457e24a9"
+  },
+  "prod_ID": "P010",
+  "prod_Name": "Milk (Toned)",
+  "prod_category": "C009",
+  "prod_Images": [
+    {
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBIPFZ3fLRc3rDtoY-MJ2A3iWOhhZ_Rfpm7w&s"
+    },
+    {
+      "image": "https://c4.wallpaperflare.com/wallpaper/207/1004/941/red-apples-fruit-basket-apple-fruits-wallpaper-preview.jpg"
+    },
+    {
+      "image": "https://c4.wallpaperflare.com/wallpaper/845/646/529/apples-still-life-fruit-food-wallpaper-preview.jpg"
+    }
+  ],
+  "prod_Rate": [
+    {
+      "1L": 60
+    },
+    {
+      "0.5L": 35
+    }
+  ],
+  "prod_Stock": 120,
+  "prod_active": true,
+  "prod_Description": "Fresh toned milk, pasteurized and hygienic.",
+  "prod_offer": 2,
+  "sortOrderList": 10
+},
+{
+  "_id": {
+    "$oid": "68a593ed928934b2457e24aa"
+  },
+  "prod_ID": "P011",
+  "prod_Name": "Rohu Fish",
+  "prod_category": "C0011",
+  "prod_Images": [
+    {
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxK_sOt1D4bAA3TjLrgCrz7d9_JkirU-icxw&s"
+    },
+    {
+      "image": "https://c4.wallpaperflare.com/wallpaper/207/1004/941/red-apples-fruit-basket-apple-fruits-wallpaper-preview.jpg"
+    },
+    {
+      "image": "https://c4.wallpaperflare.com/wallpaper/845/646/529/apples-still-life-fruit-food-wallpaper-preview.jpg"
+    }
+  ],
+  "prod_Rate": [
+    {
+      "1KG": 200
+    },
+    {
+      "0.5": 110
+    }
+  ],
+  "prod_Stock": 40,
+  "prod_active": true,
+  "prod_Description": "Fresh river fish, perfect for curry and fry.",
+  "prod_offer": 8,
+  "sortOrderList": 11
+},
+{
+  "_id": {
+    "$oid": "68a593ed928934b2457e24ab"
+  },
+  "prod_ID": "P012",
+  "prod_Name": "White Bread",
+  "prod_category": "C0012",
+  "prod_Images": [
+    {
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEgfLCS8u-gMtkNnLlfBYPbn_lSt4GWhzOAA&s"
+    },
+    {
+      "image": "https://c4.wallpaperflare.com/wallpaper/207/1004/941/red-apples-fruit-basket-apple-fruits-wallpaper-preview.jpg"
+    },
+    {
+      "image": "https://c4.wallpaperflare.com/wallpaper/845/646/529/apples-still-life-fruit-food-wallpaper-preview.jpg"
+    }
+  ],
+  "prod_Rate": [
+    {
+      "1Loaf": 35
+    }
+  ],
+  "prod_Stock": 50,
+  "prod_active": true,
+  "prod_Description": "Soft and fluffy white bread loaf for breakfast.",
+  "prod_offer": 4,
+  "sortOrderList": 12
+},
+{
+  "_id": {
+    "$oid": "68a593ed928934b2457e24ac"
+  },
+  "prod_ID": "P013",
+  "prod_Name": "Kaju Katli",
+  "prod_category": "C001",
+  "prod_Images": [
+    {
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMXv5Mbu8FNAQ1HrNzLHcYn12_Xy3cSAQk3g&s"
+    },
+    {
+      "image": "https://c4.wallpaperflare.com/wallpaper/207/1004/941/red-apples-fruit-basket-apple-fruits-wallpaper-preview.jpg"
+    },
+    {
+      "image": "https://c4.wallpaperflare.com/wallpaper/845/646/529/apples-still-life-fruit-food-wallpaper-preview.jpg"
+    }
+  ],
+  "prod_Rate": [
+    {
+      "500g": 250
+    }
+  ],
+  "prod_Stock": 25,
+  "prod_active": true,
+  "prod_Description": "Premium cashew sweet made with pure ghee.",
+  "prod_offer": 12,
+  "sortOrderList": 13
+},
+{
+  "_id": {
+    "$oid": "68a593ed928934b2457e24ad"
+  },
+  "prod_ID": "P014",
+  "prod_Name": "Chili Powder",
+  "prod_category": "C002",
+  "prod_Images": [
+    {
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvBrLQdapZ1R9yJgElqrumfDH4fR6AmCWVng&s"
+    },
+    {
+      "image": "https://c4.wallpaperflare.com/wallpaper/207/1004/941/red-apples-fruit-basket-apple-fruits-wallpaper-preview.jpg"
+    },
+    {
+      "image": "https://c4.wallpaperflare.com/wallpaper/845/646/529/apples-still-life-fruit-food-wallpaper-preview.jpg"
+    }
+  ],
+  "prod_Rate": [
+    {
+      "100g": 30
+    }
+  ],
+  "prod_Stock": 70,
+  "prod_active": true,
+  "prod_Description": "Hot and strong chili powder for spicy dishes.",
+  "prod_offer": 3,
+  "sortOrderList": 14
+},
+{
+  "_id": {
+    "$oid": "68a593ed928934b2457e24ae"
+  },
+  "prod_ID": "P015",
+  "prod_Name": "Wheat Flour",
+  "prod_category": "C003",
+  "prod_Images": [
+    {
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRv81Y1BHTYaIe87EoBrj6Nz9q_dxGRMJAGRw&s"
+    },
+    {
+      "image": "https://c4.wallpaperflare.com/wallpaper/207/1004/941/red-apples-fruit-basket-apple-fruits-wallpaper-preview.jpg"
+    },
+    {
+      "image": "https://c4.wallpaperflare.com/wallpaper/845/646/529/apples-still-life-fruit-food-wallpaper-preview.jpg"
+    }
+  ],
+  "prod_Rate": [
+    {
+      "1KG": 45
+    },
+    {
+      "5KG": 220
+    }
+  ],
+  "prod_Stock": 55,
+  "prod_active": true,
+  "prod_Description": "Stone-ground wheat flour for soft chapatis.",
+  "prod_offer": 6,
+  "sortOrderList": 15
+},
+{
+  "_id": {
+    "$oid": "68a593ed928934b2457e24af"
+  },
+  "prod_ID": "P016",
+  "prod_Name": "Chana Dal",
+  "prod_category": "C004",
+  "prod_Images": [
+    {
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkCvgPoGNhbnz_A-U4_G121w8rEiWMJYjDHg&s"
+    },
+    {
+      "image": "https://c4.wallpaperflare.com/wallpaper/207/1004/941/red-apples-fruit-basket-apple-fruits-wallpaper-preview.jpg"
+    },
+    {
+      "image": "https://c4.wallpaperflare.com/wallpaper/845/646/529/apples-still-life-fruit-food-wallpaper-preview.jpg"
+    }
+  ],
+  "prod_Rate": [
+    {
+      "1KG": 95
+    }
+  ],
+  "prod_Stock": 48,
+  "prod_active": true,
+  "prod_Description": "Split Bengal gram, perfect for dal fry.",
+  "prod_offer": 5,
+  "sortOrderList": 16
+},
+{
+  "_id": {
+    "$oid": "68a593ed928934b2457e24b0"
+  },
+  "prod_ID": "P017",
+  "prod_Name": "Coconut Oil",
+  "prod_category": "C005",
+  "prod_Images": [
+    {
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRT_YIalmuerr2Wd3MJ5jeuVgClJHzMKCI-7Q&s"
+    },
+    {
+      "image": "https://c4.wallpaperflare.com/wallpaper/207/1004/941/red-apples-fruit-basket-apple-fruits-wallpaper-preview.jpg"
+    },
+    {
+      "image": "https://c4.wallpaperflare.com/wallpaper/845/646/529/apples-still-life-fruit-food-wallpaper-preview.jpg"
+    }
+  ],
+  "prod_Rate": [
+    {
+      "1L": 160
+    },
+    {
+      "0.5L": 90
+    }
+  ],
+  "prod_Stock": 60,
+  "prod_active": true,
+  "prod_Description": "Pure coconut oil suitable for cooking and hair care.",
+  "prod_offer": 9,
+  "sortOrderList": 17
+},
+{
+  "_id": {
+    "$oid": "68a593ed928934b2457e24b1"
+  },
+  "prod_ID": "P018",
+  "prod_Name": "Namkeen Mixture",
+  "prod_category": "C006",
+  "prod_Images": [
+    {
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-EfyhtKnv9ZwRSj0qBRf_6LWpqJMnDTdSUg&s"
+    },
+    {
+      "image": "https://c4.wallpaperflare.com/wallpaper/207/1004/941/red-apples-fruit-basket-apple-fruits-wallpaper-preview.jpg"
+    },
+    {
+      "image": "https://c4.wallpaperflare.com/wallpaper/845/646/529/apples-still-life-fruit-food-wallpaper-preview.jpg"
+    }
+  ],
+  "prod_Rate": [
+    {
+      "500g": 70
+    }
+  ],
+  "prod_Stock": 95,
+  "prod_active": true,
+  "prod_Description": "Spicy, crunchy namkeen mix with peanuts and sev.",
+  "prod_offer": 7,
+  "sortOrderList": 18
+},
+{
+  "_id": {
+    "$oid": "68a593ed928934b2457e24b2"
+  },
+  "prod_ID": "P019",
+  "prod_Name": "Cabbage",
+  "prod_category": "C007",
+  "prod_Images": [
+    {
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKhaDJiZHBgn0llnMoEM7TtbpZOumElUeykg&s"
+    },
+    {
+      "image": "https://c4.wallpaperflare.com/wallpaper/207/1004/941/red-apples-fruit-basket-apple-fruits-wallpaper-preview.jpg"
+    },
+    {
+      "image": "https://c4.wallpaperflare.com/wallpaper/845/646/529/apples-still-life-fruit-food-wallpaper-preview.jpg"
+    }
+  ],
+  "prod_Rate": [
+    {
+      "1KG": 20
+    },
+    {
+      "0.5": 12
+    }
+  ],
+  "prod_Stock": 65,
+  "prod_active": true,
+  "prod_Description": "Fresh green cabbage, ideal for stir-fries and salads.",
+  "prod_offer": 4,
+  "sortOrderList": 19
+},
+{
+  "_id": {
+    "$oid": "68a593ed928934b2457e24b3"
+  },
+  "prod_ID": "P020",
+  "prod_Name": "Banana",
+  "prod_category": "C008",
+  "prod_Images": [
+    {
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfDVknUKDTo1HLaL3zUNIJz2i5HMb5RHWm9A&s"
+    },
+    {
+      "image": "https://c4.wallpaperflare.com/wallpaper/207/1004/941/red-apples-fruit-basket-apple-fruits-wallpaper-preview.jpg"
+    },
+    {
+      "image": "https://c4.wallpaperflare.com/wallpaper/845/646/529/apples-still-life-fruit-food-wallpaper-preview.jpg"
+    }
+  ],
+  "prod_Rate": [
+    {
+      "1Dozen": 50
+    },
+    {
+      "0.5Dozen": 25
+    }
+  ],
+  "prod_Stock": 90,
+  "prod_active": true,
+  "prod_Description": "Ripe bananas, rich in potassium and energy.",
+  "prod_offer": 5,
+  "sortOrderList": 20
+},
+{
+  "_id": {
+    "$oid": "68b2ff2b82211c41fcac4949"
+  },
+  "prod_ID": "P021",
+  "prod_Name": "Mutton",
+  "prod_category": "C0010",
+  "prod_Images": [
+    {
+      "image": "Uploads\\1756561195633-download.jpg",
+      "_id": {
+        "$oid": "68b2ff2b82211c41fcac494a"
+      }
+    },
+    {
+      "image": "Uploads\\1756561195634-download (2).jpg",
+      "_id": {
+        "$oid": "68b2ff2b82211c41fcac494b"
+      }
+    },
+    {
+      "image": "Uploads\\1756561195634-download (1).jpg",
+      "_id": {
+        "$oid": "68b2ff2b82211c41fcac494c"
+      }
+    }
+  ],
+  "prod_Rate": [
+    {
+      "250g": 250
+    },
+    {
+      "500g": 480
+    },
+    {
+      "1kg": 950
+    }
+  ],
+  "prod_Stock": 20,
+  "prod_active": true,
+  "prod_Description": "Are you a true connoisseur of delectable mutton dishes? The secret to crafting an exceptional mutton curry lies in selecting the perfect mutton curry cut. Whether you’re an aspiring chef or a passionate home cook, understanding the nuances of mutton cuts can elevate your culinary skills to new heights. In this blog post, we will guide you through the process of choosing the ideal mutton curry cut, ensuring a tender and flavorful delight in every bite. At Modern Gourmet, a Mumbai-based brand renowned for its high-quality mutton products, we believe that a great mutton curry starts with the right cut of meat. Let’s dive into the world of mutton cuts and unlock the key to a memorable mutton curry experience.",
+  "prod_offer": 4,
+  "sortOrderList": 21,
+  "createdAt": {
+    "$date": "2025-08-30T13:39:55.648Z"
+  },
+  "updatedAt": {
+    "$date": "2025-08-30T13:39:55.648Z"
+  },
+  "__v": 0
+}]

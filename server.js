@@ -22,6 +22,7 @@ import { fileURLToPath } from 'url';
 import { error, log } from 'console';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+const _dirname = path.resolve();
 const app = express();
 dotenv.config();
 const PORT = 3000;
@@ -2013,11 +2014,11 @@ app.get('/', (req, res) => {
 app.use(handleMulterError);
 
 
-app.use(express.static(path.join(__dirname, 'FrontEnd/dist')));
+app.use(express.static(path.join(_dirname, 'FrontEnd/dist')));
 
 // Catch-all: send index.html for any non-API route (React Router needs this)
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'FrontEnd/dist/index.html'));
+  res.sendFile(path.join(_dirname, 'FrontEnd', 'dist', 'index.html'));
 });
 
 app.listen(PORT, () => {

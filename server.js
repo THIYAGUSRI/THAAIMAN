@@ -2014,15 +2014,25 @@ app.use(handleMulterError);
 // ALL ROUTES MUST BE ABOVE THIS BLOCK
 // ────────────────────────────────────────────────
 
-// Serve the React/Vite build (Frontend is inside FrontEnd folder)
-app.use(express.static(path.join(__dirname, 'FrontEnd', 'dist')));
+// ────────────────────────────────────────────────
+// Serve frontend from ROOT ./dist (where Vite actually builds the files)
+// ────────────────────────────────────────────────
 
-// Important: catch-all route for client-side routing (React Router)
+// Log paths for debugging (remove later if you want)
+console.log('__dirname:', __dirname);
+console.log('Trying to serve static from:', path.join(__dirname, 'dist'));
+
+app.use(express.static(path.join(__dirname, 'dist')));
+
+// Catch-all route for React Router / SPA
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'FrontEnd', 'dist', 'index.html'), (err) => {
+  const indexPath = path.join(__dirname, 'dist', 'index.html');
+  console.log('Serving index.html from:', indexPath);   // ← will show in Render logs
+
+  res.sendFile(indexPath, (err) => {
     if (err) {
-      console.error('Server.js: Error sending index.html:', err);
-      res.status(500).send('Error loading page');
+      console.error('Error sending index.html:', err.message);
+      res.status(500).send('Error loading the application');
     }
   });
 });

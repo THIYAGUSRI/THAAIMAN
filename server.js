@@ -2019,10 +2019,14 @@ app.use(express.static(path.join(__dirname, 'FrontEnd', 'dist')));
 
 // Important: catch-all route for client-side routing (React Router)
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'FrontEnd', 'dist', 'index.html'));
+  res.sendFile(path.join(__dirname, 'FrontEnd', 'dist', 'index.html'), (err) => {
+    if (err) {
+      console.error('Server.js: Error sending index.html:', err);
+      res.status(500).send('Error loading page');
+    }
+  });
 });
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
-

@@ -269,9 +269,9 @@ export default function ProductCard({ products, onWishlistItemRemoved, disableWi
     }, [dispatch, userId, products, cartItems]);
 
     const getImageUrl = useCallback((imgPath) => {
-        if (!imgPath) return '/uploads/default-image.jpg';
+        if (!imgPath) return '/Uploads/default-image.jpg';
         const normalizedPath = imgPath.replace(/\\/g, '/');
-        return normalizedPath.startsWith('http') ? normalizedPath : `/uploads/${normalizedPath}`;
+        return normalizedPath.startsWith('http') ? normalizedPath : `/Uploads/${normalizedPath}`;
     }, []);
 
     const handleCardClick = useCallback((id) => {

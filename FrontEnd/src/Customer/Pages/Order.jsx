@@ -156,7 +156,7 @@ export default function Order() {
     const normalizedPath = imgPath.replace(/\\/g, '/');
     return normalizedPath.startsWith('http')
       ? normalizedPath
-      : `/uploads/${normalizedPath}`;
+      : `/Uploads/${normalizedPath}`;
   };
 
   return (

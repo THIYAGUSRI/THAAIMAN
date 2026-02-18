@@ -22,7 +22,7 @@ export default function AdminEditEventPage() {
         setEvent(data);
 
         if (data.images && data.images.length > 0) {
-          const oldPreviews = data.images.map(img => `/uploads/${img}`);
+          const oldPreviews = data.images.map(img => `/Uploads/${img}`);
           setPreviews(oldPreviews);
         }
         setRemovedOldImages([]);
@@ -132,7 +132,7 @@ export default function AdminEditEventPage() {
       const remainingOld = event.images.filter(img => !removedOldImages.includes(img));
       const finalImages = newImages.length > 0 ? result.event.images : remainingOld;
       setEvent(prev => ({ ...prev, images: finalImages }));
-      setPreviews(finalImages.map(img => `/uploads/${img}`));
+      setPreviews(finalImages.map(img => `/Uploads/${img}`));
       setNewImages([]);
       setRemovedOldImages([]);
     } catch (error) {

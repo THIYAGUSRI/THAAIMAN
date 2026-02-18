@@ -48,12 +48,12 @@ export default function AdminEventDetail() {
   }, []);
 
   const getImageUrl = (imgPath) => {
-    const fallbackImage = '/uploads/no-image.png';
+    const fallbackImage = '/Uploads/no-image.png';
     if (!imgPath) return fallbackImage;
     const normalizedPath = imgPath.replace(/\\/g, '/').trim();
     return normalizedPath.startsWith('http')
       ? normalizedPath
-      : `/uploads/${normalizedPath.replace(/^\/+/, '')}`;
+      : `/Uploads/${normalizedPath.replace(/^\/+/, '')}`;
   };
 
   const handleDelete = (eventId) => {

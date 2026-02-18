@@ -67,7 +67,7 @@ export default function AdminVideoDetail() {
     }
 
     const getImageUrl = (imgPath) => {
-        if (!imgPath) return '/uploads/default-image.jpg';
+        if (!imgPath) return '/Uploads/default-image.jpg';
         const normalizedPath = imgPath.replace(/\\/g, '/');
         return normalizedPath.startsWith('http') ? normalizedPath : `/${normalizedPath}`;
     };

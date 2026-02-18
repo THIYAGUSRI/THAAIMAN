@@ -31,11 +31,11 @@ export default function EventCard() {
   };
 
   const getImageUrl = (imgPath) => {
-    if (!imgPath) return '/uploads/default-image.jpg';
+    if (!imgPath) return '/Uploads/default-image.jpg';
     const normalizedPath = imgPath.replace(/\\/g, '/');
     return normalizedPath.startsWith('http')
       ? normalizedPath
-      : `/uploads/${normalizedPath}`;
+      : `/Uploads/${normalizedPath}`;
   };
 
   useEffect(() => {
@@ -122,7 +122,7 @@ export default function EventCard() {
                       alt={eventData.title}
                       className="w-full h-full object-cover"
                       onError={(e) => {
-                        e.target.src = '/uploads/default-image.jpg';
+                        e.target.src = '/Uploads/default-image.jpg';
                       }}
                     />
                   </div>

@@ -92,9 +92,9 @@ export default function EventDetail() {
         };
 
         const getImageUrl = (imgPath) => {
-            if (!imgPath) return '/uploads/default-image.jpg';
+            if (!imgPath) return '/Uploads/default-image.jpg';
             const normalizedPath = imgPath.replace(/\\/g, '/');
-            return normalizedPath.startsWith('http') ? normalizedPath : `/uploads/${normalizedPath}`;
+            return normalizedPath.startsWith('http') ? normalizedPath : `/Uploads/${normalizedPath}`;
         };
 
         return (

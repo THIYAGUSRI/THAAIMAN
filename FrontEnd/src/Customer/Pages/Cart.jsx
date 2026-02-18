@@ -419,7 +419,7 @@ export default function Cart() {
     const normalizedPath = imgPath.replace(/\\/g, '/');
     return normalizedPath.startsWith('http')
       ? normalizedPath
-      : `/uploads/${normalizedPath}`;
+      : `/Uploads/${normalizedPath}`;
   };
 
   if (!currentUser) {

@@ -73,7 +73,7 @@ export default function ProductDetail() {
             const imagePath = data.prod_Images[0].image.replace(/\\/g, '/');
             const imageUrl = imagePath.startsWith('http')
               ? imagePath
-              : `/uploads/${imagePath}`;
+              : `/Uploads/${imagePath}`;
             setMainImage(imageUrl);
             console.log('ProductDetail.js: Set main image:', imageUrl);
           }
@@ -332,11 +332,11 @@ export default function ProductDetail() {
   };
 
   const getImageUrl = (imgPath) => {
-    if (!imgPath) return '/uploads/no-image.png';
+    if (!imgPath) return '/Uploads/no-image.png';
     const normalizedPath = imgPath.replace(/\\/g, '/');
     return normalizedPath.startsWith('http')
       ? normalizedPath
-      : `/uploads/${normalizedPath}`;
+      : `/Uploads/${normalizedPath}`;
   };
 
   const handleAddToWhistList = async (e) => {

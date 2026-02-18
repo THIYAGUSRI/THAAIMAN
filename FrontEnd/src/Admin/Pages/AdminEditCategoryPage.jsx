@@ -97,12 +97,12 @@ export default function AdminEditCategoryPage() {
 
   // Generate full URL for existing images
   const getImageUrl = (imgPath) => {
-    const fallbackImage = '/uploads/no-image.png';
+    const fallbackImage = '/Uploads/no-image.png';
     if (!imgPath) return fallbackImage;
     const normalizedPath = imgPath.replace(/\\/g, '/').trim();
     return normalizedPath.startsWith('http')
       ? normalizedPath
-      : `/uploads/${normalizedPath.replace(/^\/+/, '')}`;
+      : `/Uploads/${normalizedPath.replace(/^\/+/, '')}`;
   };
 
   return (

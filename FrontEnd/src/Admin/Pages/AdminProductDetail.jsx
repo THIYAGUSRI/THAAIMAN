@@ -59,12 +59,12 @@ export default function AdminProductDetail() {
   }, []);
 
   const getImageUrl = (imgPath) => {
-    const fallbackImage = '/uploads/no-image.png';
+    const fallbackImage = '/Uploads/no-image.png';
     if (!imgPath) return fallbackImage;
     const normalizedPath = imgPath.replace(/\\/g, '/').trim();
     return normalizedPath.startsWith('http')
       ? normalizedPath
-      : `/uploads/${normalizedPath.replace(/^\/+/, '')}`;
+      : `/Uploads/${normalizedPath.replace(/^\/+/, '')}`;
   };
 
   const handleOpenModal = (productId) => {
@@ -132,7 +132,7 @@ export default function AdminProductDetail() {
                           alt={product.prod_Name || 'Product Image'}
                           style={{ width: '50px', height: '50px', objectFit: 'contain' }}
                           onError={(e) => {
-                            e.target.src = '/uploads/no-image.png';
+                            e.target.src = '/Uploads/no-image.png';
                           }}
                         />
                       </TableCell>

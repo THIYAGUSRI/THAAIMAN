@@ -110,7 +110,7 @@ export default function DeliveryHome() {
   const getImageUrl = (imgPath) => {
     if (!imgPath) return '/Uploads/no-image.png';
     const cleanPath = imgPath.replace(/\\/g, '/');
-    return cleanPath.startsWith('http') ? cleanPath : `/uploads/${cleanPath}`;
+    return cleanPath.startsWith('http') ? cleanPath : `/Uploads/${cleanPath}`;
   };
 
   const openActualQtyModal = (orderId, item) => {

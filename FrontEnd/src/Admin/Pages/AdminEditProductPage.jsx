@@ -65,7 +65,7 @@ export default function AdminEditProductPage() {
 
         if (product.prod_Images && product.prod_Images.length > 0) {
           setExistingImages(product.prod_Images.map(img => ({
-            url: `/uploads/${img.image}`,
+            url: `/Uploads/${img.image}`,
             path: img.image,
           })));
         }

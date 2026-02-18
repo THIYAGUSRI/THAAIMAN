@@ -41,8 +41,8 @@ const verifyToken = (token) => {
 };
 app.use(express.json());
 app.use(cors());
-app.use('/Uploads', express.static(path.join(__dirname, 'Uploads')));
-// Ensure upload directory exists
+// Accept both /Uploads and /uploads (case insensitive)
+app.use(['/Uploads', '/uploads'], express.static(path.join(__dirname, 'Uploads')));// Ensure upload directory exists
 const uploadDir = 'Uploads/';
 if (!fs.existsSync(uploadDir)) {
   fs.mkdirSync(uploadDir, { recursive: true });

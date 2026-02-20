@@ -83,10 +83,10 @@ export default function ProductCard({ products, onWishlistItemRemoved, disableWi
                 if (!response.ok) {
                     throw new Error(`Category fetch error: ${response.status}`);
                 }
-                const data = await response.json();                
+                const data = await response.json();
                 setCategoryActive(data);
                 console.log(categoryActive + 'vvvev');
-                
+
 
                 const catMap = data.reduce((map, item) => {
                     if (item.id && item.categoryName) {
@@ -235,21 +235,21 @@ export default function ProductCard({ products, onWishlistItemRemoved, disableWi
         };
 
         // Check if this exact product with this exact unit is already in cart
-        const existingCartItem = cartItems.find((item) => 
-            item.prod_ID === product.prod_ID && 
+        const existingCartItem = cartItems.find((item) =>
+            item.prod_ID === product.prod_ID &&
             item.selectedRate.key === selectedRate.key
         );
 
         if (existingCartItem) {
             // If same product with same unit exists, increase quantity
             console.log(`ProductCard.js: Same product with same unit (${selectedRate.key}) already in cart, increasing quantity`);
-            dispatch(updateCartItem({ 
-                token, 
-                userId, 
-                prod_ID: product.prod_ID, 
-                quantity: existingCartItem.quantity + 1, 
+            dispatch(updateCartItem({
+                token,
+                userId,
+                prod_ID: product.prod_ID,
+                quantity: existingCartItem.quantity + 1,
                 currentRate: existingCartItem.selectedRate,
-                selectedRate: existingCartItem.selectedRate 
+                selectedRate: existingCartItem.selectedRate
             }));
             setCartMessage(`Added more ${selectedRate.key} to cart`);
         } else {
@@ -272,7 +272,7 @@ export default function ProductCard({ products, onWishlistItemRemoved, disableWi
             }));
             setCartMessage(`Item added to cart (${selectedRate.key})`);
         }
-        
+
         setCartPopupCoords({ x: window.innerWidth / 2, y: 40 });
     }, [dispatch, userId, selectedRates, categoryMap, cartItems]);
 
@@ -283,22 +283,22 @@ export default function ProductCard({ products, onWishlistItemRemoved, disableWi
             console.log('ProductCard.js: No selected rate found for product:', prod_ID);
             return;
         }
-        
+
         // Find the EXACT cart item by prod_ID AND selectedRate.key
-        const item = cartItems.find((item) => 
-            item.prod_ID === prod_ID && 
+        const item = cartItems.find((item) =>
+            item.prod_ID === prod_ID &&
             item.selectedRate.key === selectedRate.key
         );
-        
+
         if (item) {
             console.log(`ProductCard.js: Increasing quantity for ${prod_ID} with unit ${selectedRate.key}`);
-            dispatch(updateCartItem({ 
-                token, 
-                userId, 
-                prod_ID, 
-                quantity: item.quantity + 1, 
+            dispatch(updateCartItem({
+                token,
+                userId,
+                prod_ID,
+                quantity: item.quantity + 1,
                 currentRate: item.selectedRate,
-                selectedRate: item.selectedRate 
+                selectedRate: item.selectedRate
             }));
             setCartMessage('Quantity increased successfully');
             setCartPopupCoords({ x: window.innerWidth / 2, y: 40 });
@@ -314,25 +314,25 @@ export default function ProductCard({ products, onWishlistItemRemoved, disableWi
             console.log('ProductCard.js: No selected rate found for product:', prod_ID);
             return;
         }
-        
+
         // Find the EXACT cart item by prod_ID AND selectedRate.key
-        const item = cartItems.find((item) => 
-            item.prod_ID === prod_ID && 
+        const item = cartItems.find((item) =>
+            item.prod_ID === prod_ID &&
             item.selectedRate.key === selectedRate.key
         );
-        
+
         if (item && item.quantity > 0) {
             const newQuantity = item.quantity - 1;
             console.log(`ProductCard.js: Decreasing quantity for ${prod_ID} with unit ${selectedRate.key}`);
-            dispatch(updateCartItem({ 
-                token, 
-                userId, 
-                prod_ID, 
-                quantity: newQuantity, 
+            dispatch(updateCartItem({
+                token,
+                userId,
+                prod_ID,
+                quantity: newQuantity,
                 currentRate: item.selectedRate,
-                selectedRate: item.selectedRate 
+                selectedRate: item.selectedRate
             }));
-            
+
             if (newQuantity === 0) {
                 setCartMessage(`Item (${selectedRate.key}) removed from cart successfully`);
             } else {
@@ -362,15 +362,40 @@ export default function ProductCard({ products, onWishlistItemRemoved, disableWi
         // Just update the selectedRate for the Add to Cart button
         // Do NOT try to update existing cart items here - cart items should be managed on the Cart page
         setSelectedRates(prev => ({ ...prev, [id]: newSelectedRate }));
-        
+
         // Don't update cart when changing unit in dropdown
         // Let the user explicitly click "Add to Cart" to add as separate item
     }, [products]);
 
     const getImageUrl = useCallback((imgPath) => {
-        if (!imgPath) return `${import.meta.env.IMG_URL}/uploads/default-image.jpg`;
-        const normalizedPath = imgPath.replace(/\\/g, '/');
-        return normalizedPath.startsWith('http') ? normalizedPath : `https://github.com/THIYAGUSRI/THAAIMAN/blob/main/uploads/${normalizedPath}`;
+        // Default fallback image – should exist in your repo or use external CDN
+        if (!imgPath || typeof imgPath !== 'string' || imgPath.trim() === '') {
+            return 'https://raw.githubusercontent.com/THIYAGUSRI/THAAIMAN/main/uploads/default-image.jpg';
+        }
+
+        const normalizedPath = imgPath
+            .replace(/\\/g, '/')           // Windows → Unix style paths
+            .replace(/^\/+/, '')           // remove leading slashes
+            .trim();
+
+        // If it's already a full http(s) URL → use as-is (future-proof)
+        if (normalizedPath.startsWith('http://') || normalizedPath.startsWith('https://')) {
+            return normalizedPath;
+        }
+
+        // Build GitHub raw URL
+        const username = 'THIYAGUSRI';
+        const repo = 'THAAIMAN';
+        const branch = 'main';           // change only if you use different branch
+        const uploadsDir = 'uploads';        // folder name in your repo
+
+        // If path already includes "uploads/", don't duplicate it
+        let finalPath = normalizedPath;
+        if (!normalizedPath.toLowerCase().startsWith('uploads/')) {
+            finalPath = `${uploadsDir}/${normalizedPath}`;
+        }
+
+        return `https://raw.githubusercontent.com/${username}/${repo}/${branch}/${finalPath}`;
     }, []);
 
     const handleCardClick = useCallback((id) => {
@@ -452,9 +477,9 @@ export default function ProductCard({ products, onWishlistItemRemoved, disableWi
                             key: Object.keys(product.prod_Rate?.[0] || {})[0] || 'default',
                             value: 0
                         };
-                        
-                        const cartItem = cartItems.find((item) => 
-                            item.prod_ID === product.prod_ID && 
+
+                        const cartItem = cartItems.find((item) =>
+                            item.prod_ID === product.prod_ID &&
                             item.selectedRate.key === selectedRate.key
                         );
                         const quantity = cartItem ? cartItem.quantity : 0;
@@ -464,7 +489,7 @@ export default function ProductCard({ products, onWishlistItemRemoved, disableWi
                         const imageUrl = getImageUrl(product.prod_Images && product.prod_Images[0]?.image
                             ? product.prod_Images[0].image
                             : 'default-image.jpg');
-                        
+
                         if (!isCategoryActive || !isProductActive) {
                             return null;
                         }
@@ -479,7 +504,7 @@ export default function ProductCard({ products, onWishlistItemRemoved, disableWi
                         const hasValidRates = validRates.length > 0;
                         const isOutOfStock = Number(product.prod_Stock) === 0;
 
-                        return (                            
+                        return (
                             <div
                                 key={product.prod_ID}
                                 className="w-full max-w-sm bg-white shadow-lg overflow-hidden text-center cursor-pointer transition-all duration-300 ease-in-out hover:shadow-2xl hover:scale-[1.02] flex flex-col mx-auto"
@@ -683,9 +708,9 @@ export default function ProductCard({ products, onWishlistItemRemoved, disableWi
                             key: Object.keys(product.prod_Rate?.[0] || {})[0] || 'default',
                             value: 0
                         };
-                        
-                        const cartItem = cartItems.find((item) => 
-                            item.prod_ID === product.prod_ID && 
+
+                        const cartItem = cartItems.find((item) =>
+                            item.prod_ID === product.prod_ID &&
                             item.selectedRate.key === selectedRate.key
                         );
                         const quantity = cartItem ? cartItem.quantity : 0;
@@ -695,7 +720,7 @@ export default function ProductCard({ products, onWishlistItemRemoved, disableWi
                         const imageUrl = getImageUrl(product.prod_Images && product.prod_Images[0]?.image
                             ? product.prod_Images[0].image
                             : 'default-image.jpg');
-                        
+
                         if (!isCategoryActive || !isProductActive) {
                             return null;
                         }

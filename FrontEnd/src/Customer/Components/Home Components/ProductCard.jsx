@@ -12,6 +12,8 @@ import KeyboardArrowDown from '@mui/icons-material/KeyboardArrowDown';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import Favorite from '@mui/icons-material/Favorite';
 import { Tooltip } from '@mui/material';
+import dotenv from 'dotenv';
+dotenv.config();
 
 
 export default function ProductCard({ products, onWishlistItemRemoved, disableWishlistFetch = false }) {

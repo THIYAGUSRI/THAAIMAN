@@ -41,7 +41,7 @@ export default function AdminEditProductPage() {
 
     const fetchProduct = async () => {
       try {
-        const response = await fetch(`/product/${id}`);
+        const response = await fetch(`/getproduct/${id}`);
         if (!response.ok) throw new Error('Failed to fetch product');
         const product = await response.json();
 

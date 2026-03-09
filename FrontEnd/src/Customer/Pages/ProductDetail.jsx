@@ -62,7 +62,7 @@ export default function ProductDetail() {
     const fetchProduct = async () => {
       try {
         console.log(`ProductDetail.js: Fetching product details for prod_ID: ${id}`);
-        const res = await fetch(`/product/${id}`);
+        const res = await fetch(`/getproduct/${id}`);
         if (res.ok) {
           const data = await res.json();
           console.log('ProductDetail.js: Product details fetched:', data);

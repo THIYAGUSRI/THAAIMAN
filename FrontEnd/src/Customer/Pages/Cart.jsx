@@ -302,7 +302,7 @@ export default function Cart() {
       console.log('Cart.js: Fetching product for rate change due to missing prod_Rate or invalid user cart');
       const fetchProduct = async () => {
         try {
-          const res = await fetch(`/product/${prod_ID}`);
+          const res = await fetch(`/getproduct/${prod_ID}`);
           if (res.ok) {
             const product = await res.json();
             const matchedRate = product.prod_Rate.find((rateObj) => Object.keys(rateObj)[0] === selectedKey);

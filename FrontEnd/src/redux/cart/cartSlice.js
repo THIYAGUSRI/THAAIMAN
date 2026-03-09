@@ -5,7 +5,7 @@ export const fetchCart = createAsyncThunk(
   async (token, { rejectWithValue }) => {
     console.log(`Fetching cart with token`);
     try {
-      const response = await fetch('/cart', {
+      const response = await fetch('/getcart', {
         headers: { 'Authorization': `Bearer ${token}` },
       });
       if (!response.ok) {

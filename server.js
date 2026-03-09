@@ -1076,7 +1076,7 @@ app.delete('/deletecategory/:id', async (req, res) => {
     res.status(500).json({ message: 'Failed to delete Category' });
   }
 });
-app.get('/cart', authenticateUser, async (req, res) => {
+app.get('/getcart', authenticateUser, async (req, res) => {
   try {
     console.log(`Server.js: Fetching cart for userId: ${req.userId}`);
     let userCart = await Cart.findOne({ user_id: req.userId });

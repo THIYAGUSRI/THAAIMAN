@@ -13,7 +13,7 @@ export default function SignUp() {
   };
 
   const handleLoginClick = () => {
-    navigate('/login');
+    navigate('/userlogin');
   };
 
   const handleSubmit = async (e) => {
@@ -35,7 +35,7 @@ export default function SignUp() {
 
       if (response.ok) {
         alert('Sign up successful!');
-        navigate('/login');
+        navigate('/userlogin');
       } else {
         setError(data.message || 'Error signing up');
       }

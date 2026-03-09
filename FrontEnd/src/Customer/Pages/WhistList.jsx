@@ -237,7 +237,7 @@ export default function WhistList() {
         <img src={Nouser} alt="" srcset="" />
         <div className="p-8 text-center text-xl">Please log in to view your wishlist.</div>
         <Link
-          to="/login"
+          to="/userlogin"
           className="mt-4 mb-5 inline-block bg-indigo-600 text-white text-2xl font-semibold py-2 px-6 rounded-lg hover:bg-indigo-700 transition duration-300"
         >
           Log In

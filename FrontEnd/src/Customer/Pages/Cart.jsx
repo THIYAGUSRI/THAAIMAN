@@ -459,7 +459,7 @@ export default function Cart() {
           <div className="bg-white p-6 text-center">
             <p className="text-gray-600 text-lg">Please log in to view your cart.</p>
             <Link
-              to="/login"
+              to="/userlogin"
               className="mt-4 inline-block bg-indigo-600 text-white text-2xl font-semibold py-2 px-6 rounded-lg hover:bg-indigo-700 transition duration-300"
             >
               Log In

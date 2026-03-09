@@ -196,7 +196,7 @@ export default function ProductCard({ products, onWishlistItemRemoved, disableWi
     const handleAddToCart = useCallback((product) => {
         if (!userId) {
             console.log('ProductCard.js: No user logged in, cannot add to cart');
-            window.location.href = '/login';
+            window.location.href = '/userlogin';
             return;
         }
         
@@ -442,7 +442,7 @@ export default function ProductCard({ products, onWishlistItemRemoved, disableWi
                                         e.stopPropagation();
                                         handleAddToCart(product);
                                         if (!userId) {
-                                            window.location.href = '/login';
+                                            window.location.href = '/userlogin';
                                             return;
                                         }
                                     }}

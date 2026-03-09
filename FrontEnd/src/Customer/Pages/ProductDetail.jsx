@@ -679,7 +679,7 @@ export default function ProductDetail() {
                     className="w-full sm:w-64 flex items-center justify-center gap-3 bg-blue-600 text-white px-6 py-3 rounded-lg shadow-md hover:bg-blue-700 transition-all cursor-pointer text-lg font-semibold"
                     onClick={(e) => {
                       e.stopPropagation();
-                      window.location.href = '/login';
+                      window.location.href = '/userlogin';
                     }}
                   >
                     <AddShoppingCartIcon fontSize="medium" />

@@ -220,7 +220,7 @@ export default function ProductCard({ products, onWishlistItemRemoved, disableWi
     const handleAddToCart = useCallback((product) => {
         if (!userId) {
             console.log('ProductCard.js: No user logged in, cannot add to cart');
-            window.location.href = '/login';
+            window.location.href = '/userlogin';
             return;
         }
 
@@ -561,7 +561,7 @@ export default function ProductCard({ products, onWishlistItemRemoved, disableWi
                                             <div className='pr-7'>
                                                 <Tooltip title="Login to save wishlist" arrow placement="top">
                                                     <Link
-                                                        to='/login'
+                                                        to='/userlogin'
                                                         onClick={(e) => e.stopPropagation()}
                                                         className="text-gray-500 hover:text-red-500 cursor-pointer block"
                                                     >
@@ -630,7 +630,7 @@ export default function ProductCard({ products, onWishlistItemRemoved, disableWi
                                             e.stopPropagation();
                                             handleAddToCart(product);
                                             if (!userId) {
-                                                window.location.href = '/login';
+                                                window.location.href = '/userlogin';
                                                 return;
                                             }
                                         }}
@@ -792,7 +792,7 @@ export default function ProductCard({ products, onWishlistItemRemoved, disableWi
                                             <div className='pr-7'>
                                                 <Tooltip title="Login to save wishlist" arrow placement="top">
                                                     <Link
-                                                        to='/login'
+                                                        to='/userlogin'
                                                         onClick={(e) => e.stopPropagation()}
                                                         className="text-gray-500 hover:text-red-500 cursor-pointer block"
                                                     >
@@ -861,7 +861,7 @@ export default function ProductCard({ products, onWishlistItemRemoved, disableWi
                                             e.stopPropagation();
                                             handleAddToCart(product);
                                             if (!userId) {
-                                                window.location.href = '/login';
+                                                window.location.href = '/userlogin';
                                                 return;
                                             }
                                         }}

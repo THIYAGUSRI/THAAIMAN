@@ -45,7 +45,7 @@ export default function App() {
       <Routes>
         {/* Customer Routes */}
         <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/userlogin" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/products" element={<Product />} />
         <Route path="/whistlist" element={<WhistList />} />

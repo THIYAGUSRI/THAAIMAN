@@ -95,7 +95,7 @@ export default function WhistList() {
           fetch(`/whistlists/${userId}`, {
             headers: { 'Content-Type': 'application/json', ...getAuthHeaders() },
           }),
-          fetch('/products', {
+          fetch('/getproducts', {
             headers: { 'Content-Type': 'application/json', ...getAuthHeaders() },
           }),
         ]);

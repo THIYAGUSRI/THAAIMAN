@@ -9,7 +9,7 @@ export default function RelatedProducts({ productCategoryId, productName }) {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const res = await fetch('/products');
+        const res = await fetch('/getproducts');
         if (!res.ok) throw new Error('Failed to fetch products');
         const data = await res.json();
         setProducts(data);

@@ -39,7 +39,7 @@ export default function Product() {
                 console.log('Product.js: Category map:', catMap);
 
                 // Fetch products
-                const productResponse = await fetch('/products');
+                const productResponse = await fetch('/getproducts');
                 if (!productResponse.ok) {
                     throw new Error(`Product fetch error: ${productResponse.status}`);
                 }

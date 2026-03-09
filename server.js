@@ -867,7 +867,7 @@ app.post('/createproduct', upload.array('images', 5), async (req, res) => {
     res.status(500).json({ message: 'Failed to create product', error: error.message });
   }
 });
-app.get('/products', async (req, res) => {
+app.get('/getproducts', async (req, res) => {
   try {
     console.log('Server.js: Fetching all products');
     const products = await Product.find({});

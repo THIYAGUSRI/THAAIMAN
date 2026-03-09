@@ -48,7 +48,7 @@ export default function Header() {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await fetch('/products');
+        const response = await fetch('/getproducts');
         if (!response.ok) {
           throw new Error('Failed to fetch products');
         }

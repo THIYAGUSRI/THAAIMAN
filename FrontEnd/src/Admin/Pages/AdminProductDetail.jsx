@@ -39,7 +39,7 @@ export default function AdminProductDetail() {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await fetch('/products', {
+        const response = await fetch('/getproducts', {
           headers: {
             'Accept': 'application/json',
             'Cache-Control': 'no-cache',

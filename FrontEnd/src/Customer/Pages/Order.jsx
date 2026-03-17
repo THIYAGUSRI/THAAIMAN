@@ -441,10 +441,10 @@ export default function Order() {
                       </div>
 
                       {order.deliveryProcess !== "Cancelled" && order.deliveryProcess !== "Confirmed" && order.deliveryProcess !== "Delivered" && (
-                        <div className="px-6 pb-6">
+                        <div className="px-6 pb-6 flex justify-end">
                           <button
                             onClick={() => openCancelModal(order.order_ID)}
-                            className="w-full bg-red-500 text-white py-3 rounded-lg hover:bg-red-600 transition font-medium"
+                            className="w-50% mx-10 mb-3 px-2 bg-red-500 text-white py-2 rounded-lg hover:bg-red-600 transition font-medium"
                           >
                             Cancel Order
                           </button>

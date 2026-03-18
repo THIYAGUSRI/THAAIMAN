@@ -98,6 +98,8 @@ const handleMulterError = (error, req, res, next) => {
 // Connect to MongoDB
 const MONGODB_URI = process.env.MONGODB_URI;
 const ADMIN = './JSON/admin.json'
+const DeliveryDateTime = './JSON/deliveryDate&Time.json';
+
 const initializeJsonFiles = () => {
   const dir = './JSON';
   if (!fs.existsSync(dir)) {
@@ -162,6 +164,32 @@ app.post('/adminlogin', (req, res) => {
     res.status(500).json({ message: 'Error during login' });
   }
 });
+
+app.get('/getdeliveryDateTime', (req, res) => {
+  const deliveryData = readData(DeliveryDateTime);
+  res.status(200).json(deliveryData);
+});
+
+app.put('/editdeliverydatetime/:id', (req, res) => {
+  try {
+   
+    const { id } = req.params;
+    const { deliveryDay, lastDeliveryDay, lastDeliveryTime } = req.body;
+    const deliveryData = readData(DeliveryDateTime);
+    const index = deliveryData.findIndex((d) => d.id === id);
+    if (index === -1) {
+      return res.status(404).json({ message: 'Delivery Date & Time entry not found' });
+    }
+    deliveryData[index] = { id, deliveryDay, lastDeliveryDay, lastDeliveryTime };
+    writeData(DeliveryDateTime, deliveryData);
+    res.status(200).json({ message: 'Delivery Date & Time updated successfully', entry: deliveryData[index] });
+  } catch (error) {
+    console.error('Server.js: Error in /editdeliverydatetime/:id PUT:', error);
+    res.status(500).json({ message: 'Error updating delivery date and time' });
+  }
+});
+
+
 mongoose.connect(MONGODB_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,

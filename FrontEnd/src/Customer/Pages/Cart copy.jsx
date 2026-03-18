@@ -28,21 +28,19 @@ export default function Cart() {
   const userId = currentUser?.user?.userID;
   const token = currentUser?.token;
   const [deliveryAddress, setDeliveryAddress] = useState([]);
-  const [showNoMoreThisWeek, setShowNoMoreThisWeek] = useState(false);
   const [selectedAddress, setSelectedAddress] = useState('');
   const [deliveryDay, setDeliveryDay] = useState('');
   const [deliveryTime, setDeliveryTime] = useState('');
   const [direction, setDirection] = useState('');
-  const [availableTimeSlots, setAvailableTimeSlots] = useState(['9 AM To 10 AM', '6 PM To 7 PM']);
-  const [availableDays, setAvailableDays] = useState([]);
+  const [availableTimeSlots, setAvailableTimeSlots] = useState(['9 AM To 10 AM', '6pm to 7pm']);
+  const [availableDays, setAvailableDays] = useState(['Sunday', 'Wednesday']);
+  const [timeSlotError, setTimeSlotError] = useState('');
   const [validationErrors, setValidationErrors] = useState({
     deliveryDay: '',
     deliveryTime: '',
     direction: '',
     address: ''
   });
-  const [lastDeliveryDay, setLastDeliveryDay] = useState('');
-  const [lastDeliveryTime, setLastDeliveryTime] = useState('');
   const [deliveryCentres, setDeliveryCentres] = useState([]);
   const [deleteModalOpen, setDeleteModalOpen] = useState(false);
   const [itemToDelete, setItemToDelete] = useState(null);
@@ -107,25 +105,6 @@ export default function Cart() {
   console.log('Cart.js: Delivery addresses:', deliveryAddress);
   console.log(deliveryCentres);
   console.log(deliveryCentres.length > 0 ? deliveryCentres[0].deliveryNickName : 'No delivery centre data');
-
-  useEffect(() => {
-    const getDeliveryDateTime = async () => {
-      try {
-        const response = await fetch('/getdeliveryDateTime');
-        const data = await response.json();
-        console.log("data for delivery date and time:", data);
-        setAvailableDays(data.map(item => item.deliveryDay).flat());
-        setLastDeliveryDay(data[0]?.lastDeliveryDay);
-        setLastDeliveryTime(data[0]?.lastDeliveryTime);
-        console.log(lastDeliveryDay);
-        console.log(lastDeliveryTime);
-        console.log("available day show", availableDays);
-      } catch (error) {
-        console.error("Error fetching delivery date and time:", error);
-      }
-    }
-    getDeliveryDateTime();
-  }, []);
 
   useEffect(() => {
     const fetchDeliveryCentre = async () => {
@@ -214,39 +193,28 @@ export default function Cart() {
   }, [userId]);
 
   useEffect(() => {
-    if (!deliveryDay || !lastDeliveryDay || !lastDeliveryTime) return;
+    const nowDay = new Date();
+    if (nowDay.getDay(0) === availableDays[0] || nowDay.getDay(3) === availableDays[1]) {
+      const now = new Date();
+      const hours = now.getHours();
+      const minutes = now.getMinutes();
+      const currentTime = hours * 60 + minutes;
+      const cutoff9amTo1pm = 9 * 60 + 30; // 1:30 PM (adjusted if needed)
 
-    const now = new Date();
-    const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-    const cutoffDayIndex = daysOfWeek.indexOf(lastDeliveryDay);
-    const nowDayIndex = now.getDay();
-
-    let cutoffDate = new Date(now);
-
-    if (nowDayIndex < cutoffDayIndex) {
-      // Cutoff is later this week
-      cutoffDate.setDate(now.getDate() + (cutoffDayIndex - nowDayIndex));
-    } else if (nowDayIndex === cutoffDayIndex) {
-      // Cutoff is today
+      if (currentTime < cutoff9amTo1pm) {
+        setAvailableTimeSlots(['6 PM To 7 PM']);
+        setDeliveryTime('');
+        setTimeSlotError('');
+      } else {
+        setAvailableTimeSlots([]);
+        setDeliveryTime('');
+        setTimeSlotError('Orders for today must be placed before 9:00 AM');
+      }
     } else {
-      // Cutoff was earlier this week, so next week
-      cutoffDate.setDate(now.getDate() + (7 - (nowDayIndex - cutoffDayIndex)));
+      setAvailableTimeSlots(['9 AM To 10 AM', '6 PM To 7 PM']);
+      setTimeSlotError('');
     }
-
-    const [hours, minutes] = lastDeliveryTime.split(':').map(Number);
-    cutoffDate.setHours(hours, minutes, 0, 0);
-
-    console.log("selected deliveryDay:", deliveryDay);
-    console.log("lastDeliveryDay:", lastDeliveryDay);
-    console.log("lastDeliveryTime:", lastDeliveryTime);
-    console.log("current time:", now);
-    console.log("cutoff time:", cutoffDate);
-
-    if (now > cutoffDate) {
-      console.log('Cart.js: Cutoff exceeded, triggering no-more-this-week notification');
-      setShowNoMoreThisWeek(true);
-    }
-  }, [deliveryDay, lastDeliveryDay, lastDeliveryTime]);
+  }, [deliveryDay]);
 
   useEffect(() => {
     const order = {
@@ -922,56 +890,6 @@ export default function Cart() {
           </Box>
         </Modal>
       </div>
-      <Modal
-        open={showNoMoreThisWeek}
-        onClose={handleCancel}
-        aria-labelledby="cutoff-modal-title"
-        aria-describedby="cutoff-modal-description"
-      >
-        <Box
-          sx={{
-            position: 'absolute',
-            top: '50%',
-            left: '50%',
-            transform: 'translate(-50%, -50%)',
-            width: 420,
-            bgcolor: 'background.paper',
-            borderRadius: 3,
-            border: '1px solid #e0e0e0',
-            boxShadow: '0px 8px 24px rgba(0,0,0,0.15)',
-            p: 4,
-            textAlign: 'center'
-          }}
-        >
-          <Typography id="cutoff-modal-title" variant="h6" component="h2" sx={{ fontWeight: 'bold' }}>
-            Delivery schedule update
-          </Typography>
-
-          <Typography id="cutoff-modal-description" sx={{ mt: 2, color: 'text.secondary' }}>
-            We could not process any more deliveries this week (cut-off time has passed).
-            <br /><br />
-            Your order will be processed <strong>next week</strong>.
-            <br />
-            Is that okay?
-          </Typography>
-
-          <Box sx={{ mt: 3, display: 'flex', justifyContent: 'center', gap: 2 }}>
-            <Button
-              variant="contained"
-              color="primary"
-              onClick={handleConfirmNextWeek}
-            >
-              Yes, proceed next week
-            </Button>
-            <Button
-              variant="outlined"
-              onClick={handleCancel}
-            >
-              Cancel / Choose again
-            </Button>
-          </Box>
-        </Box>
-      </Modal>
     </div>
   );
 }

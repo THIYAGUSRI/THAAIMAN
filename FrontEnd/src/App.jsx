@@ -39,6 +39,8 @@ import WhistList from './Customer/Pages/WhistList';
 import AdminCustomerDetail from './Admin/Pages/AdminCustomerDetail';
 import AdminDeliveryCentre from './Admin/Pages/AdminDeliveryCentre';
 import AdminOrderDetail from './Admin/Pages/AdminOrderDetail';
+import AdminDeliveryDateTime from './Admin/Pages/AdminDeliveryDateTime';
+
 export default function App() {
   return (
     <BrowserRouter>
@@ -75,6 +77,7 @@ export default function App() {
         <Route path='/admincustomerdetail' element={<AdminCustomerDetail />} />
         <Route path='/admindeliverycentredetail' element={<AdminDeliveryCentre />} />
         <Route path='/adminorderdetail' element={<AdminOrderDetail />} />
+        <Route path='/admindeliverydatetime' element={<AdminDeliveryDateTime />} />
         {/* Edit Routes */}
         <Route path='/admineditproduct/:id' element={<AdminEditProductPage />} />
         <Route path='/admineditcategory/:id' element={<AdminEditCategoryPage />} />

@@ -24,6 +24,7 @@ import {
   AddBox as AddBoxIcon,
   ListAlt as ListAltIcon,
   Inventory as InventoryIcon,
+  CalendarToday as CalendarTodayIcon,
   AccountCircle,
 } from '@mui/icons-material';
 import { Link } from 'react-router-dom';
@@ -86,6 +87,11 @@ export default function AdminLayout({ children }) {
       icon: <InventoryIcon />,
       link: '/adminorderdetail'      
     },
+    {
+      title: 'Delivery Date & Time',
+      icon: <CalendarTodayIcon />,
+      link: '/admindeliverydatetime'
+    }
   ];
 
   return (

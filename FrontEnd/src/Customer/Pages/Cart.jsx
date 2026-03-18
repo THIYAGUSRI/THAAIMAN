@@ -739,9 +739,9 @@ export default function Cart() {
                     <p className="text-sm text-red-600 mt-1">{validationErrors.deliveryTime}</p>
                   )}
                   {/* Optional: general time slot error (if needed) */}
-                  {timeSlotError && (
+                  {/* {timeSlotError && (
                     <p className="text-sm text-red-600 mt-1">{timeSlotError}</p>
-                  )}
+                  )} */}
                 </div>
               </div>
               {/* If you want a global error (outside both fields), you can add it here */}

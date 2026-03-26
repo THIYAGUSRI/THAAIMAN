@@ -156,7 +156,7 @@ export default function Contact() {
                   <div className="text-center">
                     <button
                       type="submit"
-                      className="bg-green-600 font-semibold text-white px-6 py-2 rounded-md hover:bg-green-500 focus:outline-none focus:ring-2 focus:ring-green-500"
+                      className="bg-gradient-to-b from-yellow-400 to-yellow-500 font-semibold text-white px-6 py-2 rounded-md hover:from-yellow-500 hover:to-yellow-600 focus:outline-none focus:ring-2 focus:ring-yellow-500"
                       disabled={loading}
                     >
                       {loading ? 'Submitting...' : 'Submit'}

@@ -365,7 +365,7 @@ export default function DeliveryAddress() {
                 <div className="flex justify-center mt-8">
                   <button
                     type="submit"
-                    className="bg-gradient-to-r from-indigo-600 to-blue-500 text-white font-semibold py-2.5 px-10 rounded-lg hover:from-indigo-700 hover:to-blue-600"
+                    className="bg-gradient-to-r from-yellow-400 to-yellow-500 text-white font-semibold py-2.5 px-10 rounded-lg hover:from-yellow-500 hover:to-yellow-600"
                   >
                     {editingAddressId ? 'Update Address' : 'Save Address'}
                   </button>
@@ -379,7 +379,7 @@ export default function DeliveryAddress() {
             <div className="flex justify-between items-center mb-6">
               <h2 className="text-xl font-semibold text-gray-900">Saved Addresses</h2>
               <button
-                className="bg-gradient-to-r from-indigo-600 to-blue-500 text-white py-1.5 px-5 rounded-lg hover:from-indigo-700 hover:to-blue-600"
+                className="bg-gradient-to-r from-yellow-400 to-yellow-500 text-white py-1.5 px-5 rounded-lg hover:from-yellow-500 hover:to-yellow-600"
                 onClick={() => {
                   setEditingAddressId(null);
                   setFormData({
@@ -440,7 +440,7 @@ export default function DeliveryAddress() {
             <div className="mt-6 text-center">
               <Link
                 to="/cart"
-                className="inline-block bg-gradient-to-r from-violet-500 to-blue-500 text-white font-bold py-3 px-10 rounded-lg"
+                className="inline-block bg-gradient-to-r from-yellow-400 to-yellow-500 text-white font-bold py-3 px-10 rounded-lg"
               >
                 Continue to Cart
               </Link>

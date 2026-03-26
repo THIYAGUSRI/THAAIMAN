@@ -4,6 +4,13 @@
 @plugin "flowbite-react/plugin/tailwindcss";
 @source "../.flowbite-react/class-list.json";
 
+@font-face {
+  font-family: 'Quicksand';
+  src: url('./Quicksand/Quicksand-VariableFont_wght.ttf') format('truetype');
+  font-style: normal;
+  font-display: swap;
+}
+
 @theme {
   --font-display-arial: "Arial", sans-serif;
   --font-soft-poppins: "Poppins", sans-serif;
@@ -29,6 +36,6 @@
   --font-roboto: "Roboto", sans-serif;
 }
 
-/* .category-font {
-  font-family: var(--font-lora) !important;
-} */
+body {
+  font-family: var(--font-soft-quicksand);
+}

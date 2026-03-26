@@ -532,7 +532,7 @@ export default function Header() {
 
           <div className="lg:hidden h-auto"></div>
 
-          {currentUser && mobileMenuOpen && (
+          {mobileMenuOpen && (
             <div className="lg:hidden fixed top-[118px] md:top-[108px] right-0 z-[9999] w-full">
               <div className="bg-gradient-to-r from-gray-100 to-green-200 w-full pb-5 shadow-lg">
                 <nav className="container mx-auto px-4">
@@ -568,15 +568,7 @@ export default function Header() {
                     >
                       <LocalShippingIcon className="mr-2" />
                       Delivery Address
-                    </a>
-                    <a
-                      href="/contact"
-                      className={`text-gray-800 font-semibold text-md flex items-center px-4 py-3 rounded-lg ${isActive('/contact') ? 'bg-gradient-to-r from-yellow-400 to-yellow-600 shadow-md text-white' : 'hover:bg-white/50'
-                        }`}
-                    >
-                      <ContactMailIcon className="mr-2" />
-                      Contact Us
-                    </a>
+                    </a>                    
                     <a
                       href="/event"
                       className={`text-gray-800 font-semibold text-md flex items-center px-4 py-3 rounded-lg ${isActive('/event') ? 'bg-gradient-to-r from-yellow-400 to-yellow-600 shadow-md text-white' : 'hover:bg-white/50'
@@ -593,14 +585,21 @@ export default function Header() {
                       <FeaturedVideoIcon className="mr-2" />
                       Video
                     </a>
+                    <a
+                      href="/contact"
+                      className={`text-gray-800 font-semibold text-md flex items-center px-4 py-3 rounded-lg ${isActive('/contact') ? 'bg-gradient-to-r from-yellow-400 to-yellow-600 shadow-md text-white' : 'hover:bg-white/50'
+                        }`}
+                    >
+                      <ContactMailIcon className="mr-2" />
+                      Contact Us
+                    </a>
                   </div>
                 </nav>
               </div>
             </div>
           )}
 
-          {currentUser && (
-            <div className="mx-auto px-1 z-0">
+          <div className="mx-auto px-1 z-0">
               <div className="flex items-center justify-end w-full flex-nowrap">
                 <nav className="hidden lg:flex items-center space-x-4">
                   <a
@@ -634,15 +633,7 @@ export default function Header() {
                   >
                     <LocalShippingIcon className="mr-2" />
                     Delivery Address
-                  </a>
-                  <a
-                    href="/contact"
-                    className={`text-md font-semibold font-soft-quicksand px-4 py-2 flex items-center transition-all duration-100 ${isActive('/contact') ? 'border-b-4 border-yellow-500 text-yellow-600' : 'text-gray-700 hover:text-yellow-600'
-                      }`}
-                  >
-                    <ContactMailIcon className="mr-2" />
-                    Contact
-                  </a>
+                  </a>                  
                   <a
                     href="/event"
                     className={`text-md font-semibold font-soft-quicksand px-4 py-2 flex items-center transition-all duration-100 ${isActive('/event') ? 'border-b-4 border-yellow-500 text-yellow-600' : 'text-gray-700 hover:text-yellow-600'
@@ -659,10 +650,17 @@ export default function Header() {
                     <FeaturedVideoIcon className="mr-2" />
                     Video
                   </a>
+                  <a
+                    href="/contact"
+                    className={`text-md font-semibold font-soft-quicksand px-4 py-2 flex items-center transition-all duration-100 ${isActive('/contact') ? 'border-b-4 border-yellow-500 text-yellow-600' : 'text-gray-700 hover:text-yellow-600'
+                      }`}
+                  >
+                    <ContactMailIcon className="mr-2" />
+                    Contact
+                  </a>
                 </nav>
               </div>
             </div>
-          )}
         </div>
       </header>
     </>

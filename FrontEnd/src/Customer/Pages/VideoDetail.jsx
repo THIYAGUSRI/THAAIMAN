@@ -115,7 +115,7 @@ export default function VideoDetail() {
 
           <div className="px-10">
             <h1 className="text-2xl font-bold mb-2">{video.title}</h1>
-            <p className="text-gray-700 text-justify">
+            <p className="text-gray-700 font-soft-quicksand text-justify">
               {expanded ? video.description : shortDescription + (words.length > 104 ? "..." : "")}
             </p>
             {words.length > 104 && (

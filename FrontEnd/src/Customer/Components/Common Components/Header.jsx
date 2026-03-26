@@ -305,10 +305,10 @@ export default function Header() {
                             },
                             color: 'black'
                           }} />
-                          <label className='text-black text-xs sm:text-sm md:text-base lg:text-lg cursor-pointer pl-0.5 sm:pl-1 uppercase hidden sm:block'>
+                          <label className='text-black text-xs sm:text-sm md:text-base lg:text-lg cursor-pointer pl-0.5 sm:pl-1 font-soft-quicksand font-semibold hidden sm:block'>
                             {currentUser?.user?.userName?.length < 8
                               ? currentUser?.user?.userName
-                              : currentUser?.user?.userName?.substring(0, 5) + "..."}
+                              : currentUser?.user?.userName?.substring(0, 3) + "..."}
                           </label>
                           <label className='text-black text-xs cursor-pointer pl-0.5 sm:hidden uppercase'>
                             {currentUser?.user?.userName?.length < 6
@@ -605,7 +605,7 @@ export default function Header() {
                 <nav className="hidden lg:flex items-center space-x-4">
                   <a
                     href="/"
-                    className={`text-md font-medium px-4 py-2 flex items-center transition-all duration-100 ${isActive('/') ? 'border-b-4 border-yellow-500 text-yellow-600' : 'text-gray-700 hover:text-yellow-600'
+                    className={`text-md font-semibold font-soft-quicksand px-4 py-2 flex items-center transition-all duration-100 ${isActive('/') ? 'border-b-4 border-yellow-500 text-yellow-600' : 'text-gray-700 hover:text-yellow-600'
                       }`}
                   >
                     <HomeIcon className="mr-2" />
@@ -613,15 +613,15 @@ export default function Header() {
                   </a>
                   <a
                     href="/products"
-                    className={`text-md font-medium px-4 py-2 flex items-center transition-all duration-100 ${isActive('/products') ? 'border-b-4 border-yellow-500 text-yellow-600' : 'text-gray-700 hover:text-yellow-600'
+                    className={`text-md font-semibold font-soft-quicksand px-4 py-2 flex items-center transition-all duration-100 ${isActive('/products') ? 'border-b-4 border-yellow-500 text-yellow-600' : 'text-gray-700 hover:text-yellow-600'
                       }`}
                   >
                     <ShoppingBagIcon className="mr-2" />
-                    Product
+                    Products
                   </a>
                   <a
                     href="/order"
-                    className={`text-md font-medium px-4 py-2 flex items-center transition-all duration-100 ${isActive('/order') ? 'border-b-4 border-yellow-500 text-yellow-600' : 'text-gray-700 hover:text-yellow-600'
+                    className={`text-md font-semibold font-soft-quicksand px-4 py-2 flex items-center transition-all duration-100 ${isActive('/order') ? 'border-b-4 border-yellow-500 text-yellow-600' : 'text-gray-700 hover:text-yellow-600'
                       }`}
                   >
                     <ReceiptLongIcon className="mr-2" />
@@ -629,7 +629,7 @@ export default function Header() {
                   </a>
                   <a
                     href="/delivery-address"
-                    className={`text-md font-medium px-4 py-2 flex items-center transition-all duration-100 ${isActive('/delivery-address') ? 'border-b-4 border-yellow-500 text-yellow-600' : 'text-gray-700 hover:text-yellow-600'
+                    className={`text-md font-semibold font-soft-quicksand px-4 py-2 flex items-center transition-all duration-100 ${isActive('/delivery-address') ? 'border-b-4 border-yellow-500 text-yellow-600' : 'text-gray-700 hover:text-yellow-600'
                       }`}
                   >
                     <LocalShippingIcon className="mr-2" />
@@ -637,7 +637,7 @@ export default function Header() {
                   </a>
                   <a
                     href="/contact"
-                    className={`text-md font-medium px-4 py-2 flex items-center transition-all duration-100 ${isActive('/contact') ? 'border-b-4 border-yellow-500 text-yellow-600' : 'text-gray-700 hover:text-yellow-600'
+                    className={`text-md font-semibold font-soft-quicksand px-4 py-2 flex items-center transition-all duration-100 ${isActive('/contact') ? 'border-b-4 border-yellow-500 text-yellow-600' : 'text-gray-700 hover:text-yellow-600'
                       }`}
                   >
                     <ContactMailIcon className="mr-2" />
@@ -645,7 +645,7 @@ export default function Header() {
                   </a>
                   <a
                     href="/event"
-                    className={`text-md font-medium px-4 py-2 flex items-center transition-all duration-100 ${isActive('/event') ? 'border-b-4 border-yellow-500 text-yellow-600' : 'text-gray-700 hover:text-yellow-600'
+                    className={`text-md font-semibold font-soft-quicksand px-4 py-2 flex items-center transition-all duration-100 ${isActive('/event') ? 'border-b-4 border-yellow-500 text-yellow-600' : 'text-gray-700 hover:text-yellow-600'
                       }`}
                   >
                     <EventIcon className="mr-2" />
@@ -653,7 +653,7 @@ export default function Header() {
                   </a>
                   <a
                     href="/video"
-                    className={`text-md font-medium px-4 py-2 flex items-center transition-all duration-100 ${isActive('/video') ? 'border-b-4 border-yellow-500 text-yellow-600' : 'text-gray-700 hover:text-yellow-600'
+                    className={`text-md font-semibold font-soft-quicksand px-4 py-2 flex items-center transition-all duration-100 ${isActive('/video') ? 'border-b-4 border-yellow-500 text-yellow-600' : 'text-gray-700 hover:text-yellow-600'
                       }`}
                   >
                     <FeaturedVideoIcon className="mr-2" />

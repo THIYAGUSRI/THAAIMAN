@@ -112,7 +112,6 @@ export default function Category() {
                                         flex items-center justify-center 
                                         overflow-hidden 
                                         border-4 border-white
-                                        hover:shadow-2xl    
                                         transition-shadow duration-300
                                     ">
                                         <img
@@ -131,7 +130,7 @@ export default function Category() {
                                     <div className="text-center px-2 max-w-full">
                                         <h2
                                             className="
-                                            font-lora
+                                            font-soft-quicksand
                                             font-bold
                                             text-sm
                                             text-gray-800 

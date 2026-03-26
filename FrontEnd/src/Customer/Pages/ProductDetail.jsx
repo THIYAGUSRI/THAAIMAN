@@ -571,7 +571,7 @@ export default function ProductDetail() {
           {/* Product Details - Right Side (Desktop) / Full Width (Mobile & Tablet) */}
           <div className="w-full lg:w-1/2 flex flex-col gap-6 px-4 sm:px-6 md:px-8">
             <div className="flex items-start justify-between">
-              <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold break-words pr-4">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold font-soft-quicksand break-words pr-4">
                 {product.prod_Name}
               </h1>
               {isWishlisted ? (
@@ -670,7 +670,7 @@ export default function ProductDetail() {
             {/* Cart Actions */}
             <div>
               {Number(product.prod_Stock) === 0 ? (
-                <div className="w-full sm:w-64 text-center text-3xl font-serif font-bold text-red-600">
+                <div className="w-full sm:w-64 text-center text-3xl font-soft-quicksand font-bold text-red-600">
                   ✗ Out of Stock
                 </div>
               ) : !cartItem ? (
@@ -762,7 +762,7 @@ export default function ProductDetail() {
                 </h2>
 
                 <div className="bg-gray-50 p-4 sm:p-6 rounded-lg">
-                  <p className="text-gray-700 leading-relaxed text-base sm:text-lg">
+                  <p className="text-gray-700 font-soft-quicksand leading-relaxed text-base sm:text-lg">
                     {showMore
                       ? product.prod_Description
                       : product.prod_Description.split(" ").slice(0, 100).join(" ")}
@@ -786,7 +786,7 @@ export default function ProductDetail() {
       <div className=''>
         {showRelatedTitle && (
           <div className="mb-12">
-            <h2 className="text-2xl md:text-3xl font-bold text-center mb-8">
+            <h2 className="text-3xl md:text-4xl font-bold font-soft-quicksand text-center mb-8">
               Related Products
             </h2>
             <div className="mx-auto w-full grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
@@ -802,7 +802,7 @@ export default function ProductDetail() {
         {/* People also bought Section */}
         {showOtherTitle && (
           <div className="mt-12">
-            <h2 className="text-2xl md:text-3xl font-bold text-center mb-8">
+            <h2 className="text-3xl md:text-4xl font-bold font-soft-quicksand text-center mb-8">
               People also bought
             </h2>
             <div className="w-full grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">

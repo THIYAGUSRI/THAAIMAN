@@ -132,8 +132,8 @@ export default function History() {
   return (
     <div className="bg-gray-50 min-h-screen">
       <Header />
-      <div className="container mx-auto px-4 py-8">
-        <h1 className="text-3xl font-bold mb-8 text-gray-800">Order History</h1>
+      <div className="container mx-auto px-4 py-8 mt-30">
+        <h1 className="text-3xl font-bold font-soft-quicksand mb-8 text-gray-800">Order History</h1>
         
         {/* Filter Section */}
         <div className="bg-white p-6 rounded-lg shadow-md mb-8">

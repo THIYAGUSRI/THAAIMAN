@@ -109,7 +109,7 @@ export default function Home() {
                   <div className="flex justify-center mt-10">
                     <button
                       onClick={handleViewMore}
-                      className="rounded-lg bg-gradient-to-r from-yellow-400 to-yellow-600 px-8 py-3.5 text-white font-semibold text-lg shadow-md hover:from-yellow-500 hover:to-yellow-700 hover:shadow-lg active:scale-95 transition-all duration-300"
+                      className="rounded-lg bg-gradient-to-r font-soft-quicksand from-yellow-400 to-yellow-600 px-8 py-3.5 text-white font-semibold text-lg shadow-md hover:from-yellow-500 hover:to-yellow-700 hover:shadow-lg active:scale-95 transition-all duration-300"
                     >
                       View More Products 
                     </button>

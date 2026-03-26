@@ -528,7 +528,7 @@ export default function ProductCard({ products, onWishlistItemRemoved, disableWi
                                 <div className="flex flex-col gap-2 w-full mb-2 h-20">
                                     {currentUser ? (
                                         <div className='flex justify-between mt-3'>
-                                            <h5 className="text-lg text-center font-bold pl-3 uppercase">{product.prod_Name || 'Unknown Product'}</h5>
+                                            <h5 className="text-lg text-center font-bold font-soft-quicksand pl-3">{product.prod_Name || 'Unknown Product'}</h5>
                                             {isWishlisted ? (
                                                 <div className='pr-7'>
                                                     <Tooltip title="Remove from wishlist" arrow placement="top">
@@ -557,7 +557,7 @@ export default function ProductCard({ products, onWishlistItemRemoved, disableWi
                                         </div>
                                     ) : (
                                         <div className='flex justify-between mt-3' onClick={(e) => e.stopPropagation()}>
-                                            <h5 className="text-lg text-center font-bold pl-3 uppercase">{product.prod_Name || 'Unknown Product'}</h5>
+                                            <h5 className="text-lg text-center font-bold font-soft-quicksand pl-3">{product.prod_Name || 'Unknown Product'}</h5>
                                             <div className='pr-7'>
                                                 <Tooltip title="Login to save wishlist" arrow placement="top">
                                                     <Link
@@ -637,7 +637,7 @@ export default function ProductCard({ products, onWishlistItemRemoved, disableWi
                                         disabled={!hasValidRates}
                                     >
                                         <div className="relative z-20 flex items-center justify-center gap-2 animate-slide-up-fade">
-                                            <span className="font-medium tracking-wide transition-transform duration-300 group-hover:translate-x-1">
+                                            <span className="font-medium font-soft-quicksand tracking-wide transition-transform duration-300 group-hover:translate-x-1">
                                                 Add to Cart
                                             </span>
                                             <AddShoppingCartIcon className="text-xl transition-all duration-300 group-hover:rotate-12 animate-spin-fade" />
@@ -703,7 +703,7 @@ export default function ProductCard({ products, onWishlistItemRemoved, disableWi
                     })}
                 </div>
             ) : (
-                <div className="container px-4 py-12 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                <div className="container mx-auto px-4 py-12 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
                     {products.map((product) => {
                         // Find cart item with BOTH product ID AND selected unit
                         const selectedRate = selectedRates[product.prod_ID] || {
@@ -759,7 +759,7 @@ export default function ProductCard({ products, onWishlistItemRemoved, disableWi
                                 <div className="flex flex-col gap-2 w-full mb-2 h-20">
                                     {currentUser ? (
                                         <div className='flex justify-between mt-3'>
-                                            <h5 className="text-lg text-center font-bold pl-3 uppercase">{product.prod_Name || 'Unknown Product'}</h5>
+                                            <h5 className="text-lg text-center font-bold font-soft-quicksand pl-3">{product.prod_Name || 'Unknown Product'}</h5>
                                             {isWishlisted ? (
                                                 <div className='pr-7'>
                                                     <Tooltip title="Remove from wishlist" arrow placement="top">
@@ -788,7 +788,7 @@ export default function ProductCard({ products, onWishlistItemRemoved, disableWi
                                         </div>
                                     ) : (
                                         <div className='flex justify-between mt-3' onClick={(e) => e.stopPropagation()}>
-                                            <h5 className="text-lg text-center font-bold pl-3 uppercase">{product.prod_Name || 'Unknown Product'}</h5>
+                                            <h5 className="text-lg text-center font-bold font-soft-quicksand pl-3">{product.prod_Name || 'Unknown Product'}</h5>
                                             <div className='pr-7'>
                                                 <Tooltip title="Login to save wishlist" arrow placement="top">
                                                     <Link
@@ -868,7 +868,7 @@ export default function ProductCard({ products, onWishlistItemRemoved, disableWi
                                         disabled={!hasValidRates}
                                     >
                                         <div className="relative z-20 flex items-center justify-center gap-2 animate-slide-up-fade">
-                                            <span className="font-medium tracking-wide transition-transform duration-300 group-hover:translate-x-1">
+                                            <span className="font-medium font-soft-quicksand tracking-wide transition-transform duration-300 group-hover:translate-x-1">
                                                 Add to Cart
                                             </span>
                                             <AddShoppingCartIcon className="text-xl transition-all duration-300 group-hover:rotate-12 animate-spin-fade" />

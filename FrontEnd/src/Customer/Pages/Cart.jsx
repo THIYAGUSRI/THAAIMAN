@@ -688,16 +688,16 @@ export default function Cart() {
               <div className="flex flex-col md:flex-row gap-4 md:gap-6">
                 {/* Delivery Day Field */}
                 <div className="w-full md:flex-1">
-                  <label className="font-bold text-lg">
+                  <label className="font-bold text-md">
                     Delivery Day <span className="text-red-500">*</span>
                   </label>
                   <Select
-                    placeholder="Select Duration"
+                    placeholder="Select Day"
                     indicator={<KeyboardArrowDown />}
                     sx={{
                       width: '100%',                // takes full width of its container
                       marginTop: '10px',
-                      padding: '10px 10px',
+                      padding: '5px 5px',
                     }}
                     value={deliveryDay}
                     onChange={(event, value) => {
@@ -716,7 +716,7 @@ export default function Cart() {
 
                 {/* Delivery Time Field */}
                 <div className="w-full md:flex-1">
-                  <label className="font-bold text-lg">
+                  <label className="font-bold text-md">
                     Delivery Time <span className="text-red-500">*</span>
                   </label>
                   <Select
@@ -725,7 +725,7 @@ export default function Cart() {
                     sx={{
                       width: '100%',
                       marginTop: '10px',
-                      padding: '10px 10px',
+                      padding: '5px 5px',
                     }}
                     disabled={availableTimeSlots.length === 0}
                     value={deliveryTime}
@@ -755,7 +755,7 @@ export default function Cart() {
               {/* If you want a global error (outside both fields), you can add it here */}
             </div>
             <div className='mb-6 pl-6 pr-6'>
-              <label className='font-bold text-lg'>Delivery Centre <span className='text-red-500'>*</span></label>
+              <label className='font-bold text-md'>Delivery Centre <span className='text-red-500'>*</span></label>
               <Select
                 placeholder="Select Delivery Centre"
                 indicator={<KeyboardArrowDown />}
@@ -767,7 +767,7 @@ export default function Cart() {
                     },
                   },
                   marginTop: '10px',
-                  padding: '10px 10px'
+                  padding: '6px 6px'
                 }}
                 value={direction}
                 onChange={(event, value) => {
@@ -794,30 +794,19 @@ export default function Cart() {
 
             <div className='mb-6 border border-gray-300 rounded-md ml-6 mr-6 p-2'>
               <div className=''>
-                <label className='mr-55 font-bold text-lg'>Address <span className='text-red-500 font-bold'>*</span></label>
-              </div>
-              <button className='w-full py-2'><Link
-                to="/delivery-address"
-                className="flex items-center justify-center w-full py-3 bg-white border border-gray-300 rounded-lg shadow hover:bg-green-50 hover:border-green-500 transition-colors duration-200"
-              >
-                <span className="flex items-center justify-center border-3 border-green-400 rounded-full mr-3">
-                  <AddIcon className="text-black" />
-                </span>
-                <span className="text-black text-lg font-bold hover:text-green-500">
-                  Add Address
-                </span>
-              </Link>
-              </button>
+                <label className='mr-55 font-bold text-md'>Address <span className='text-red-500 font-bold'>*</span></label>
+              </div>              
               <div>
                 {deliveryAddress.length > 0 ? (
                   deliveryAddress.map((addr) => (
                     <div
                       key={addr.id}
-                      className={`flex items-center mb-2 p-2 mt-2 cursor-pointer ${selectedAddress === addr.id ? 'border-3 border-green-300 rounded-lg p-2 cursor-pointer' : 'cursor-pointer'}`}
+                      className={`flex items-center mb-2 p-2 mt-2 cursor-pointer ${selectedAddress === addr.id ? 'border-3 border-yellow-400 bg-green-50 rounded-lg p-2 cursor-pointer' : 'cursor-pointer'}`}
                     >
                       <input
                         type="radio"
                         id={addr.id}
+                        style={{ accentColor: '#996515' }}
                         name="deliveryAddress"
                         value={addr.id}
                         checked={selectedAddress === addr.id}
@@ -825,14 +814,14 @@ export default function Cart() {
                           setSelectedAddress(addr.id);
                           setValidationErrors(prev => ({ ...prev, address: '' }));
                         }}
-                        className="mr-2 h-6 w-6 cursor-pointer"
+                        className="mr-2 h-4 w-4 cursor-pointer"
                         required
                       />
                       <label htmlFor={addr.id} className="text-sm text-gray-800 flex flex-col cursor-pointer">
-                        <span className='font-bold text-sm uppercase'>{addr.nickName}</span>
+                        <span className='font-bold text-xs uppercase'>{addr.nickName}</span>
                         {selectedAddress === addr.id && (
                           <span>
-                            <span className='font-bold'>City:</span> {addr.city} | <span className='font-bold'>Mobile:</span> {addr.mobile}
+                            <span className='font-bold text-xs'>City:</span> {addr.city} | <span className='font-bold text-xs'>Mobile:</span> {addr.mobile}
                           </span>
                         )}
                       </label>
@@ -844,6 +833,18 @@ export default function Cart() {
                   </p>
                 )}
               </div>
+              <button className='w-full py-2'><Link
+                to="/delivery-address"
+                className="flex items-center justify-center w-full py-3 bg-white border border-gray-300 rounded-lg shadow hover:bg-green-50 hover:border-green-500 transition-colors duration-200"
+              >
+                <span className="flex items-center justify-center border-3 border-green-400 rounded-full mr-3">
+                  <AddIcon className="text-black" />
+                </span>
+                <span className="text-black text-lg font-bold">
+                  Add Address
+                </span>
+              </Link>
+              </button>
               {validationErrors.address && (
                 <p className="text-sm text-red-600 mt-1">{validationErrors.address}</p>
               )}

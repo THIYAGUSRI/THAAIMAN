@@ -15,7 +15,12 @@ import { Tooltip } from '@mui/material';
 
 
 
-export default function ProductCard({ products, onWishlistItemRemoved, disableWishlistFetch = false }) {
+export default function ProductCard({
+    products,
+    onWishlistItemRemoved,
+    disableWishlistFetch = false,
+    onSelectedRateChange,
+}) {
     const [selectedRates, setSelectedRates] = useState({});
     const [categoryMap, setCategoryMap] = useState({});
     const [categoryActive, setCategoryActive] = useState([]);
@@ -362,10 +367,13 @@ export default function ProductCard({ products, onWishlistItemRemoved, disableWi
         // Just update the selectedRate for the Add to Cart button
         // Do NOT try to update existing cart items here - cart items should be managed on the Cart page
         setSelectedRates(prev => ({ ...prev, [id]: newSelectedRate }));
+        if (onSelectedRateChange) {
+            onSelectedRateChange(id, newSelectedRate);
+        }
 
         // Don't update cart when changing unit in dropdown
         // Let the user explicitly click "Add to Cart" to add as separate item
-    }, [products]);
+    }, [products, onSelectedRateChange]);
 
     const getImageUrl = useCallback((imgPath) => {
         // Final fallback - a known working image or placeholder

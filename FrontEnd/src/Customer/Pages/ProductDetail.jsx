@@ -786,8 +786,8 @@ export default function ProductDetail() {
       <div className=''>
         {showRelatedTitle && (
           <div className="mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold font-soft-quicksand text-center mb-8">
-              Related Products
+            <h2 className="text-3xl md:text-4xl font-bold font-soft-quicksand text-center mb-8 flex flex-col">
+              Related Products <span className='text-yellow-500 text-sm'>━━━━⊱⋆⊰━━━━</span>
             </h2>
             <div className="mx-auto w-full grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
               {productsToShow.map((pro) => (
@@ -802,8 +802,8 @@ export default function ProductDetail() {
         {/* People also bought Section */}
         {showOtherTitle && (
           <div className="mt-12">
-            <h2 className="text-3xl md:text-4xl font-bold font-soft-quicksand text-center mb-8">
-              People also bought
+            <h2 className="text-3xl md:text-4xl font-bold font-soft-quicksand flex flex-col text-center">
+              People also bought <span className='text-yellow-500 text-sm'>━━━━⊱⋆⊰━━━━</span>
             </h2>
             <div className="w-full grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
               {otherProductsToShow.map((pro) => (

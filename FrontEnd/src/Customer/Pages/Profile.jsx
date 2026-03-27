@@ -105,7 +105,7 @@ export default function Profile() {
   return (
     <div>
       <Header />
-      <div className="min-h-screen flex items-center justify-center bg-gray-100 py-12 px-4 sm:px-6 lg:px-8">
+      <div className="min-h-screen mt-20 flex items-center justify-center bg-gray-100 py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-md w-full bg-white rounded-lg shadow-lg p-6">
           <div className="flex flex-col items-center mb-6">
             <div className="w-24 h-24 bg-gray-200 rounded-full flex items-center justify-center mb-4">
@@ -203,7 +203,7 @@ export default function Profile() {
                 <div className="flex space-x-4">
                   <button
                     onClick={handleSaveClick}
-                    className="bg-blue-600 text-white font-semibold py-2 px-6 rounded-md hover:bg-blue-700"
+                    className="bg-gradient-to-r from-yellow-400 to-yellow-500 text-white font-semibold py-2 px-6 rounded-md hover:from-yellow-500 hover:to-yellow-600 transition duration-300"
                   >
                     Save Changes
                   </button>
@@ -213,7 +213,7 @@ export default function Profile() {
                       setEditedUser(profileUser);
                       setErrors({});
                     }}
-                    className="bg-gray-200 text-gray-700 font-semibold py-2 px-6 rounded-md hover:bg-gray-300"
+                    className="bg-gradient-to-r from-gray-200 to-gray-300 text-gray-700 font-semibold py-2 px-6 rounded-md hover:from-gray-300 hover:to-gray-400 transition duration-300"
                   >
                     Cancel
                   </button>
@@ -221,9 +221,9 @@ export default function Profile() {
               ) : (
                 <button
                   onClick={handleEditClick}
-                  className="bg-blue-600 text-white font-semibold py-2 px-6 rounded-md hover:bg-blue-700"
+                  className="bg-gradient-to-r from-yellow-400 to-yellow-500 text-white font-semibold py-2 px-6 rounded-md hover:from-yellow-500 hover:to-yellow-600 transition duration-300"
                 >
-                  Edit Profile
+                  Click to Edit Profile
                 </button>
               )}
             </div>

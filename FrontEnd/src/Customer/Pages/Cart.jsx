@@ -534,7 +534,7 @@ export default function Cart() {
             <img src={Carts} alt="Cart" className='flex items-center content-center m-auto w-lg h-lg' />
             <Link
               to="/products"
-              className="inline-block bg-indigo-600 text-white font-semibold py-2 px-6 rounded-lg hover:bg-indigo-700 transition duration-300"
+              className="inline-block bg-gradient-to-r from-yellow-400 to-yellow-500 text-white font-semibold py-2 px-6 rounded-lg hover:bg-indigo-700 transition duration-300"
             >
               Shop Now
             </Link>

@@ -102,12 +102,12 @@ export default function VideoDetail() {
                   <Button sx={{ my: 2, color: 'black', display: 'block', fontSize: { xs: 9, md: 'body1.fontSize' } }}>
                     {new Date(video.date).toLocaleDateString()}
                   </Button>
-                  <Button sx={{ my: 2, color: 'black', display: 'block', fontSize: { xs: 9, md: 'body1.fontSize' } }}>
+                  {/* <Button sx={{ my: 2, color: 'black', display: 'block', fontSize: { xs: 9, md: 'body1.fontSize' } }}>
                     <FavoriteBorderIcon sx={{ fontSize: { xs: 9, md: 'body1.fontSize' } }} /> {video.likes.length || 0}
                   </Button>
                   <Button sx={{ my: 2, color: 'black', display: 'block', fontSize: { xs: 10, md: 'body1.fontSize' } }}>
                     <ShareIcon sx={{ fontSize: { xs: 10, md: 'body1.fontSize' } }} />
-                  </Button>
+                  </Button> */}
                 </Box>
               </Toolbar>
             </Container>

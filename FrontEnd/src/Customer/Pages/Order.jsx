@@ -277,7 +277,7 @@ export default function Order() {
                 '&.Mui-selected': {
                   backgroundColor: '#3299ff',
                   color: '#fff',
-                  '&:hover': { backgroundColor: '#006FDB' },
+                  '&:hover': { backgroundColor: '#2289f0' },
                 },
               }}
               value="Order Placed"
@@ -490,7 +490,7 @@ export default function Order() {
                         </Tooltip>
                       )}
                     <p className="text-xs font-bold text-soft-quicksand px-1 sm:px-3 py-0.5 sm:py-1 md:py-0.5 text-gray-800 sm:text-lg">
-                      Order ID: <span className="font-normal font-soft-quicksand">{order.order_ID}</span><Chip label={order.deliveryProcess} size="small" sx={{ ml: { xs: 0.5 }, fontSize: { xs: '0.7rem', sm: '0.75rem', md: '0.8rem' } }}
+                      Order ID: <span className="font-normal font-soft-quicksand">{order.order_ID}</span><Chip label={order.deliveryProcess} size="small" sx={{ ml: { xs: 0.5 }, fontSize: { xs: '0.7rem', sm: '0.75rem', md: '0.8rem' }, marginBottom: '3px' }}
                         color={order.deliveryProcess === "Order Placed" ? "primary" : order.deliveryProcess === "Confirmed" ? "warning" : order.deliveryProcess === "Delivered" ? "success" : order.deliveryProcess === "Cancelled" ? "error" : undefined} />
                     </p>
                   </div>

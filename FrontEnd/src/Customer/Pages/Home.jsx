@@ -24,7 +24,7 @@ export default function Home() {
       try {
         const response = await fetch('/getproducts', {
           method: 'GET',
-          credentials: 'include',          // Important: sends cookies/session if backend uses them
+          credentials: 'include',         
           headers: {
             'Accept': 'application/json',
           },
@@ -66,7 +66,7 @@ export default function Home() {
         <Carousel_Slider />
         <Category />
 
-        <h1 className="text-center text-5xl font-bold mb-8">Products</h1>
+        <h1 className="text-center flex flex-col text-5xl font-bold">Products <span className='text-yellow-500 text-sm'>━━━━⊱⋆⊰━━━━</span></h1>
 
         {/* Loading state */}
         {loading && (

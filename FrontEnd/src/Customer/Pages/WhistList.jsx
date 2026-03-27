@@ -130,6 +130,24 @@ export default function WhistList() {
     try {
       // Get current cart items to check for duplicates
       const cartItems = Array.isArray(cart.items) ? cart.items : [];
+      const outofstockItems = whistlistProducts.filter(product => {
+        const totalInCart = cartItems.reduce((total, item) => {
+          if (item.prod_ID === product.prod_ID) {
+            return total + item.quantity;
+          }
+          return total;
+        }, 0);
+
+        return totalInCart >= product.prod_Stock;
+      });
+      if (outofstockItems.length > 0) {
+        const outOfStockNames = outofstockItems.map(item => item.prod_Name).join(', ');
+        setMessage(`Sorry, the following item(s) are out of stock and cannot be added: ${outOfStockNames}`);
+        setPopupCoords({ x: window.innerWidth / 2, y: 20 });
+        setAddAllLoading(false);
+        setModalOpen(false);
+        return;
+      }
 
       let addedCount = 0;
       let ignoredCount = 0;
@@ -277,8 +295,8 @@ export default function WhistList() {
       )}
 
       <div className="container mx-auto px-4 py-12">
-        <h2 className="text-4xl font-bold text-center mb-10 text-gray-800">
-          My Wishlist ({whistlistProducts.length})
+        <h2 className="text-4xl font-bold text-center mb-10 flex flex-col text-gray-800">
+          My Wishlist ({whistlistProducts.length})<span className='text-yellow-500 text-sm'>━━━━⊱⋆⊰━━━━</span>
         </h2>
 
         {whistlistProducts.length > 0 ? (
@@ -291,17 +309,16 @@ export default function WhistList() {
                 disableWishlistFetch={true} // Add this prop
               />
             </div>
-            <div className='py-6'>
-              <AddToCartButton
-                variant="contained"
+            <div>
+              <button
+              className='bg-gradient-to-r from-yellow-400 to-yellow-500 text-white text-xl font-semibold py-2 px-6 rounded-md hover:from-yellow-500 hover:to-yellow-600 transition duration-300'
                 onClick={() => setModalOpen(true)}
-                startIcon={<ShoppingCartIcon />}
-                disableElevation
+                disableElevation                
               >
-                <span style={{ fontWeight: 800, letterSpacing: '0.2px' }}>
-                  Add All to Cart
+                <span>
+                  <ShoppingCartIcon /> Add All to Cart
                 </span>
-              </AddToCartButton>
+              </button>
             </div>
           </div>
 

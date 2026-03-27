@@ -123,103 +123,102 @@ export default function WhistList() {
   );
 
   const handleAddAllToCart = async () => {
-    if (!userId || whistlistProducts.length === 0) return;
+  if (!userId || whistlistProducts.length === 0) return;
 
-    setAddAllLoading(true);
+  setAddAllLoading(true);
 
-    try {
-      // Get current cart items to check for duplicates
-      const cartItems = Array.isArray(cart.items) ? cart.items : [];
-      const outofstockItems = whistlistProducts.filter(product => {
+  try {
+    // Get current cart items
+    const cartItems = Array.isArray(cart.items) ? cart.items : [];
+
+    // Separate out‑of‑stock products (stock <= 0)
+    const outOfStockProducts = whistlistProducts.filter(product => product.prod_Stock <= 0);
+    const inStockProducts = whistlistProducts.filter(product => product.prod_Stock > 0);
+
+    let addedCount = 0;
+    let ignoredCount = 0;
+    const addToCartPromises = [];
+
+    // Process only in‑stock products
+    for (const product of inStockProducts) {
+      // Check if product is already in cart
+      const isInCart = cartItems.some(item => item.prod_ID === product.prod_ID);
+
+      if (!isInCart) {
+        // Optional: check stock again against current cart quantity (if needed)
         const totalInCart = cartItems.reduce((total, item) => {
-          if (item.prod_ID === product.prod_ID) {
-            return total + item.quantity;
-          }
+          if (item.prod_ID === product.prod_ID) return total + item.quantity;
           return total;
         }, 0);
+        if (totalInCart >= product.prod_Stock) {
+          // This product is effectively out of stock when adding 1 more unit
+          continue;
+        }
 
-        return totalInCart >= product.prod_Stock;
-      });
-      if (outofstockItems.length > 0) {
-        const outOfStockNames = outofstockItems.map(item => item.prod_Name).join(', ');
-        setMessage(`Sorry, the following item(s) are out of stock and cannot be added: ${outOfStockNames}`);
-        setPopupCoords({ x: window.innerWidth / 2, y: 20 });
-        setAddAllLoading(false);
-        setModalOpen(false);
-        return;
-      }
-
-      let addedCount = 0;
-      let ignoredCount = 0;
-
-      // Prepare all add to cart actions
-      const addToCartPromises = [];
-
-      for (const product of whistlistProducts) {
-        // Check if product already in cart
-        const isInCart = cartItems.some(item => item.prod_ID === product.prod_ID);
-
-        if (!isInCart) {
-          // Get default rate
-          const defaultRate = product.prod_Rate && Array.isArray(product.prod_Rate) && product.prod_Rate.length > 0
-            ? {
+        // Get default rate
+        const defaultRate = product.prod_Rate && Array.isArray(product.prod_Rate) && product.prod_Rate.length > 0
+          ? {
               key: Object.keys(product.prod_Rate[0])[0],
               value: Number(Object.values(product.prod_Rate[0])[0])
             }
-            : { key: 'default', value: 0 };
+          : { key: 'default', value: 0 };
 
-          // Prepare add to cart action
-          const addToCartAction = dispatch(addToCart({
-            token,
-            userId,
-            prod_ID: product.prod_ID,
-            quantity: 1,
-            selectedRate: defaultRate,
-            prod_Name: product.prod_Name || 'Unknown Product',
-            image: product.prod_Images && product.prod_Images[0]?.image
-              ? product.prod_Images[0].image.replace(/\\/g, '/')
-              : 'default-image.jpg',
-            prod_Rate: product.prod_Rate,
-            prod_category: product.prod_category,
-          }));
+        // Prepare add to cart action
+        const addToCartAction = dispatch(addToCart({
+          token,
+          userId,
+          prod_ID: product.prod_ID,
+          quantity: 1,
+          selectedRate: defaultRate,
+          prod_Name: product.prod_Name || 'Unknown Product',
+          image: product.prod_Images && product.prod_Images[0]?.image
+            ? product.prod_Images[0].image.replace(/\\/g, '/')
+            : 'default-image.jpg',
+          prod_Rate: product.prod_Rate,
+          prod_category: product.prod_category,
+        }));
 
-          addToCartPromises.push(addToCartAction);
-          addedCount++;
-        } else {
-          ignoredCount++;
-        }
+        addToCartPromises.push(addToCartAction);
+        addedCount++;
+      } else {
+        ignoredCount++;
       }
-
-      // Wait for all add to cart actions to complete
-      if (addToCartPromises.length > 0) {
-        await Promise.all(addToCartPromises);
-        // Fetch updated cart to ensure state is synchronized
-        await dispatch(fetchCart(token));
-      }
-
-      // Show appropriate message
-      let successMessage = '';
-      if (addedCount > 0 && ignoredCount > 0) {
-        successMessage = `Added ${addedCount} item(s) to cart. ${ignoredCount} item(s) were already in your cart.`;
-      } else if (addedCount > 0) {
-        successMessage = `Added ${addedCount} item(s) to cart successfully!`;
-      } else if (ignoredCount > 0) {
-        successMessage = `All ${ignoredCount} item(s) were already in your cart.`;
-      }
-
-      setMessage(successMessage);
-      setPopupCoords({ x: window.innerWidth / 2, y: 20 });
-
-      setModalOpen(false);
-
-    } catch (error) {
-      console.error('Error adding all to cart:', error);
-      setMessage('Failed to add items to cart');
-      setPopupCoords({ x: window.innerWidth / 2, y: 20 });
-    } finally {
-      setAddAllLoading(false);
     }
-  };
+
+    // Wait for all add to cart actions to complete
+    if (addToCartPromises.length > 0) {
+      await Promise.all(addToCartPromises);
+      await dispatch(fetchCart(token));
+    }
+
+    // Build the final message
+    let successMessage = '';
+    if (outOfStockProducts.length > 0) {
+      const outOfStockNames = outOfStockProducts.map(p => p.prod_Name).join(', ');
+      successMessage = `Skipped out‑of‑stock item(s): ${outOfStockNames}. `;
+    }
+    if (addedCount > 0 && ignoredCount > 0) {
+      successMessage += `Added ${addedCount} item(s) to cart. ${ignoredCount} item(s) were already in your cart.`;
+    } else if (addedCount > 0) {
+      successMessage += `Added ${addedCount} item(s) to cart successfully!`;
+    } else if (ignoredCount > 0) {
+      successMessage += `All ${ignoredCount} item(s) were already in your cart.`;
+    } else if (outOfStockProducts.length > 0 && addedCount === 0 && ignoredCount === 0) {
+      successMessage = `All wishlist items are out of stock and could not be added.`;
+    }
+
+    setMessage(successMessage);
+    setPopupCoords({ x: window.innerWidth / 2, y: 20 });
+    setModalOpen(false);
+
+  } catch (error) {
+    console.error('Error adding all to cart:', error);
+    setMessage('Failed to add items to cart');
+    setPopupCoords({ x: window.innerWidth / 2, y: 20 });
+  } finally {
+    setAddAllLoading(false);
+  }
+};
 
   // Function to handle wishlist removal from child component
   const handleWishlistItemRemoved = useCallback((productId) => {

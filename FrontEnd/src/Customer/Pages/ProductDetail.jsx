@@ -19,6 +19,7 @@ import { useCallback } from 'react';
 export default function ProductDetail() {
   const [product, setProduct] = useState({});
   const [selectedRate, setSelectedRate] = useState({ key: '', value: 0 });
+  const [stockStatus, setStockStatus] = useState('');
   const [mainImage, setMainImage] = useState('');
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -68,6 +69,7 @@ export default function ProductDetail() {
           console.log('ProductDetail.js: Product details fetched:', data);
           console.log('ProductDetail.js: Raw prod_Rate:', data.prod_Rate);
           setProduct(data);
+          setStockStatus(data.prod_Stock);
 
           // Set default main image from index 0
           if (data.prod_Images && data.prod_Images.length > 0) {
@@ -289,6 +291,13 @@ export default function ProductDetail() {
     // Set flag to prevent rate reset during this update
     skipRateResetRef.current = true;
 
+    if (stockStatus && newQuantity > stockStatus) {
+      setCartMessage(`Cannot add more than available stock (${stockStatus} ${cartItem.selectedRate.key})`);
+      setCartPopupCoords({ x: window.innerWidth / 2, y: 40 });
+      return;
+    }
+
+
     dispatch(updateCartItem({
       token,
       userId,
@@ -333,37 +342,37 @@ export default function ProductDetail() {
   };
 
   const getImageUrl = useCallback((imgPath) => {
-          // Final fallback - a known working image or placeholder
-          const FALLBACK = 'https://raw.githubusercontent.com/THIYAGUSRI/THAAIMAN/main/uploads/1765434787902-366029619.png';
-  
-          if (!imgPath || typeof imgPath !== 'string' || imgPath.trim() === '') {
-              return FALLBACK;
-          }
-  
-          const normalized = imgPath
-              .replace(/\\/g, '/')           // fix any backslashes
-              .replace(/^\/+/, '')           // remove leading slashes
-              .trim();
-  
-          // If already a full URL, keep it (in case backend sends full link sometimes)
-          if (normalized.startsWith('http://') || normalized.startsWith('https://')) {
-              return normalized;
-          }
-  
-          // Build correct GitHub RAW URL
-          const repoOwner = 'THIYAGUSRI';
-          const repoName = 'THAAIMAN';
-          const branch = 'main';
-          const folder = 'uploads';
-  
-          // If path already includes "uploads/", don't duplicate it
-          let finalPath = normalized;
-          if (!normalized.toLowerCase().startsWith('uploads/')) {
-              finalPath = `${folder}/${normalized}`;
-          }
-  
-          return `https://raw.githubusercontent.com/${repoOwner}/${repoName}/${branch}/${finalPath}`;
-      }, []);
+    // Final fallback - a known working image or placeholder
+    const FALLBACK = 'https://raw.githubusercontent.com/THIYAGUSRI/THAAIMAN/main/uploads/1765434787902-366029619.png';
+
+    if (!imgPath || typeof imgPath !== 'string' || imgPath.trim() === '') {
+      return FALLBACK;
+    }
+
+    const normalized = imgPath
+      .replace(/\\/g, '/')           // fix any backslashes
+      .replace(/^\/+/, '')           // remove leading slashes
+      .trim();
+
+    // If already a full URL, keep it (in case backend sends full link sometimes)
+    if (normalized.startsWith('http://') || normalized.startsWith('https://')) {
+      return normalized;
+    }
+
+    // Build correct GitHub RAW URL
+    const repoOwner = 'THIYAGUSRI';
+    const repoName = 'THAAIMAN';
+    const branch = 'main';
+    const folder = 'uploads';
+
+    // If path already includes "uploads/", don't duplicate it
+    let finalPath = normalized;
+    if (!normalized.toLowerCase().startsWith('uploads/')) {
+      finalPath = `${folder}/${normalized}`;
+    }
+
+    return `https://raw.githubusercontent.com/${repoOwner}/${repoName}/${branch}/${finalPath}`;
+  }, []);
 
   const handleAddToWhistList = async (e) => {
     e.preventDefault();
@@ -721,7 +730,15 @@ export default function ProductDetail() {
                       if (inputValue === '') return;
 
                       const newQuantity = parseInt(inputValue, 10);
-
+                      const availableStock = Number(product.prod_Stock) || 0;
+                      
+                      // Validate quantity doesn't exceed stock
+                      if (newQuantity > availableStock) {
+                        setCartMessage(`Maximum ${availableStock} item(s) available in stock`);
+                        setCartPopupCoords({ x: window.innerWidth / 2, y: 40 });
+                        return;
+                      }
+                      
                       // Prevent 0 or negative
                       if (newQuantity >= 1 && cartItem) {
                         // Set flag to prevent rate reset during this update
@@ -744,9 +761,9 @@ export default function ProductDetail() {
                     onWheel={(e) => e.target.blur()}
                   />
                   <button
-                    className="w-12 h-12 flex items-center justify-center rounded-lg bg-green-500 text-white hover:bg-green-600 transition-all cursor-pointer shadow-md"
+                    className="w-12 h-12 flex items-center justify-center rounded-lg bg-green-500 text-white hover:bg-green-600 transition-all cursor-pointer shadow-md disabled:cursor-not-allowed"
                     onClick={handleIncrease}
-                    disabled={product.prod_Stock <= quantity}
+                    disabled={quantity >= product.prod_Stock}
                   >
                     <AddIcon fontSize="large" />
                   </button>

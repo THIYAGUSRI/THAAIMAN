@@ -22,6 +22,7 @@ export default function ProductCard({
     onSelectedRateChange,
 }) {
     const [selectedRates, setSelectedRates] = useState({});
+    const [stockStatus, setStockStatus] = useState('');
     const [categoryMap, setCategoryMap] = useState({});
     const [categoryActive, setCategoryActive] = useState([]);
     const [isInitialized, setIsInitialized] = useState(false);
@@ -221,7 +222,7 @@ export default function ProductCard({
         }
     }, [dispatch, userId, whistlist, onWishlistItemRemoved]);
 
-    // Add to Cart function - UPDATED TO HANDLE UNIT SEPARATION
+    // Add to Cart function - UPDATED TO HANDLE UNIT SEPARATION + STOCK VALIDATION
     const handleAddToCart = useCallback((product) => {
         if (!userId) {
             console.log('ProductCard.js: No user logged in, cannot add to cart');
@@ -239,6 +240,14 @@ export default function ProductCard({
             value: Number(Object.values(product.prod_Rate[0])[0]),
         };
 
+        // Check stock before adding
+        const availableStock = Number(product.prod_Stock) || 0;
+        if (availableStock <= 0) {
+            setCartMessage('Out of stock - cannot add to cart');
+            setCartPopupCoords({ x: window.innerWidth / 2, y: 40 });
+            return;
+        }
+
         // Check if this exact product with this exact unit is already in cart
         const existingCartItem = cartItems.find((item) =>
             item.prod_ID === product.prod_ID &&
@@ -246,6 +255,12 @@ export default function ProductCard({
         );
 
         if (existingCartItem) {
+            // Check if increasing quantity would exceed stock
+            if (existingCartItem.quantity + 1 > availableStock) {
+                setCartMessage(`Cannot add - only ${availableStock} items available in stock`);
+                setCartPopupCoords({ x: window.innerWidth / 2, y: 40 });
+                return;
+            }
             // If same product with same unit exists, increase quantity
             console.log(`ProductCard.js: Same product with same unit (${selectedRate.key}) already in cart, increasing quantity`);
             dispatch(updateCartItem({
@@ -296,6 +311,17 @@ export default function ProductCard({
         );
 
         if (item) {
+            // Get product stock
+            const product = products.find(p => p.prod_ID === prod_ID);
+            const availableStock = Number(product?.prod_Stock) || 0;
+            
+            // Check if increasing would exceed stock
+            if (item.quantity + 1 > availableStock) {
+                setCartMessage(`Cannot add - max ${availableStock} item(s) available in stock`);
+                setCartPopupCoords({ x: window.innerWidth / 2, y: 40 });
+                return;
+            }
+            
             console.log(`ProductCard.js: Increasing quantity for ${prod_ID} with unit ${selectedRate.key}`);
             dispatch(updateCartItem({
                 token,
@@ -310,7 +336,7 @@ export default function ProductCard({
         } else {
             console.log(`ProductCard.js: No cart item found for ${prod_ID} with unit ${selectedRate.key}`);
         }
-    }, [dispatch, token, userId, cartItems, selectedRates]);
+    }, [dispatch, token, userId, cartItems, selectedRates, products]);
 
     const handleDecrease = useCallback((prod_ID) => {
         // Get the selected rate for this specific product
@@ -487,6 +513,7 @@ export default function ProductCard({
                             key: Object.keys(product.prod_Rate?.[0] || {})[0] || 'default',
                             value: 0
                         };
+
 
                         const cartItem = cartItems.find((item) =>
                             item.prod_ID === product.prod_ID &&
@@ -677,6 +704,15 @@ export default function ProductCard({
                                                 if (inputValue === '') return;
 
                                                 const newQuantity = parseInt(inputValue, 10);
+                                                const availableStock = Number(product.prod_Stock) || 0;
+                                                
+                                                // Validate quantity doesn't exceed stock
+                                                if (newQuantity > availableStock) {
+                                                    setCartMessage(`Maximum ${availableStock} item(s) available in stock`);
+                                                    setCartPopupCoords({ x: window.innerWidth / 2, y: 40 });
+                                                    return;
+                                                }
+                                                
                                                 if (newQuantity >= 1 && cartItem) {
                                                     dispatch(updateCartItem({
                                                         token,
@@ -696,11 +732,13 @@ export default function ProductCard({
                                             onWheel={(e) => e.target.blur()}
                                         />
                                         <button
-                                            className="w-1/4 rounded-lg bg-gradient-to-r from-green-400 to-green-600 px-2 py-1.5 text-white transition-all duration-300 hover:from-green-500 hover:to-green-600 active:scale-95"
+                                            className="w-1/4 rounded-lg bg-gradient-to-r from-green-400 to-green-600 px-2 py-1.5 text-white transition-all duration-300 hover:from-green-500 hover:to-green-600 active:scale-95 disabled:cursor-not-allowed"
                                             onClick={(e) => {
                                                 e.stopPropagation();
                                                 handleIncrease(product.prod_ID);
                                             }}
+                                            disabled={quantity >= Number(product.prod_Stock)}
+                                            title={quantity >= Number(product.prod_Stock) ? 'Stock limit reached' : 'Add quantity'}
                                         >
                                             <AddIcon className="text-xl" />
                                         </button>
@@ -908,6 +946,15 @@ export default function ProductCard({
                                                 if (inputValue === '') return;
 
                                                 const newQuantity = parseInt(inputValue, 10);
+                                                const availableStock = Number(product.prod_Stock) || 0;
+                                                
+                                                // Validate quantity doesn't exceed stock
+                                                if (newQuantity > availableStock) {
+                                                    setCartMessage(`Maximum ${availableStock} item(s) available in stock`);
+                                                    setCartPopupCoords({ x: window.innerWidth / 2, y: 40 });
+                                                    return;
+                                                }
+                                                
                                                 if (newQuantity >= 1 && cartItem) {
                                                     dispatch(updateCartItem({
                                                         token,
@@ -927,11 +974,13 @@ export default function ProductCard({
                                             onWheel={(e) => e.target.blur()}
                                         />
                                         <button
-                                            className="w-1/4 rounded-lg bg-gradient-to-r from-green-400 to-green-600 px-2 py-1.5 text-white transition-all duration-300 hover:from-green-500 hover:to-green-600 active:scale-95"
+                                            className="w-1/4 rounded-lg bg-gradient-to-r from-green-400 to-green-600 px-2 py-1.5 text-white transition-all duration-300 hover:from-green-500 hover:to-green-600 active:scale-95 disabled:cursor-not-allowed"
                                             onClick={(e) => {
                                                 e.stopPropagation();
                                                 handleIncrease(product.prod_ID);
                                             }}
+                                            disabled={quantity >= Number(product.prod_Stock)}
+                                            title={quantity >= Number(product.prod_Stock) ? 'Stock limit reached' : 'Add quantity'}
                                         >
                                             <AddIcon className="text-xl" />
                                         </button>

@@ -292,7 +292,7 @@ export default function ProductDetail() {
     skipRateResetRef.current = true;
 
     if (stockStatus && newQuantity > stockStatus) {
-      setCartMessage(`Cannot add more than available stock (${stockStatus} ${cartItem.selectedRate.key})`);
+      setCartMessage(`Cannot add - max ${stockStatus} item(s) available in stock`);
       setCartPopupCoords({ x: window.innerWidth / 2, y: 40 });
       return;
     }
